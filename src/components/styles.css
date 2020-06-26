@@ -456,3 +456,8 @@ ul {
 .carousel {
   height: 100%;
 }
+
+.carousel-buttons {
+  position: absolute;
+  top: 0;
+}
