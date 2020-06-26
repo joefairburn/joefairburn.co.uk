@@ -6,6 +6,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 import Button from "./button"
 
+import PreviousIcon from "../images/icons8_previous.inline.svg"
+import NextIcon from "../images/icons8_next.inline.svg"
+
 function Gallery(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -22,18 +25,34 @@ function Gallery(props) {
   }
 
   return (
-    <div>
+    <div className="carousel-container">
       <div className="carousel-buttons">
-        <Button onClick={previousSlide}>test</Button>
-        <Button onClick={nextSlide}>test</Button>
+        <Button onClick={previousSlide} className="btn-indicator btn-previous">
+          <PreviousIcon />
+        </Button>
+        <Button onClick={nextSlide} className="btn-indicator btn-next">
+          <NextIcon />
+        </Button>
       </div>
       <Carousel
         selectedItem={currentSlide}
         onChange={updateCurrentSlide}
         infiniteLoop
+        swipeable
+        emulateTouch
+        showArrows={false}
+        showStatus={false}
+        showIndicators={false}
+        dynamicHeight={true}
+        useKeyboardArrows
       >
         {props.images.map((e, index) => (
-          <GalleryItem image={e.image} alt={e.alt} key={index} />
+          <GalleryItem
+            className="gallery-image-container"
+            image={e.image}
+            alt={e.alt}
+            key={index}
+          />
         ))}
       </Carousel>
     </div>

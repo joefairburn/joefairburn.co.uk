@@ -319,23 +319,7 @@ main {
   color: rgb(235, 230, 230);
   width: 75px;
   height: 75px;
-  background-color: white;
   overflow: hidden;
-}
-
-.github-image {
-  -webkit-mask: url(../images/icons8_github.svg) no-repeat center;
-  mask: url(../images/icons8_github.svg) no-repeat center;
-}
-
-.linkedin-image {
-  -webkit-mask: url(../images/icons8_linkedin.svg) no-repeat center;
-  mask: url(../images/icons8_linkedin.svg) no-repeat center;
-}
-
-.mail-image {
-  -webkit-mask: url(../images/icons8_envelope.svg) no-repeat center;
-  mask: url(../images/icons8_envelope.svg) no-repeat center;
 }
 
 .modal-container {
@@ -383,7 +367,7 @@ main {
 
 .modal-body {
   overflow: auto;
-  max-height: 75%;
+  max-height: 80%;
 }
 
 .modal-header {
@@ -396,6 +380,11 @@ main {
 
 .modal-title {
   margin: 0;
+  padding-top: auto;
+}
+
+.modal-title-container {
+  margin: auto 0;
 }
 
 .modal-x-container {
@@ -410,14 +399,16 @@ main {
   overflow: hidden;
   height: 20px;
   width: 20px;
-  fbackground-color: black;
+  background-color: black;
   -webkit-mask: url(../images/icons8_delete.svg) no-repeat center;
   mask: url(../images/icons8_delete.svg) no-repeat center;
 }
 
 .modal-body {
-  margin: 0px 30px;
+  margin: 0px 25px;
   overflow: auto;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .modal-hidden-true {
@@ -457,7 +448,69 @@ ul {
   height: 100%;
 }
 
-.carousel-buttons {
+.carousel-buttons > .btn {
   position: absolute;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.carousel-container {
+  position: relative;
+  display: block;
+}
+
+.btn {
+  border-radius: 5px;
+  background: #4947ce;
+  border: none;
+  color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-indicator {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.btn-indicator > img {
+  color: white;
+}
+
+.btn-previous {
+  left: 0;
+  margin-left: 20px;
+}
+
+.btn-next {
+  right: 0;
+  margin-right: 20px;
+}
+
+.gallery-image-container {
+  height: 50vh;
+}
+
+.gallery-image {
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #dfdfdf;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgb(128, 128, 128);
 }

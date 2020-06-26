@@ -2,8 +2,8 @@ import React, { useCallback, useState } from "react"
 
 function GalleryItem(props) {
   return (
-    <div>
-      <img src={props.image} alt={props.alt} />
+    <div className="gallery-image-container">
+      <img className="gallery-image " src={props.image} alt={props.alt} />
     </div>
   )
 }

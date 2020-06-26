@@ -2,16 +2,27 @@ import React from "react"
 
 import Gallery from "../gallery"
 
-import junglegamesgameplay from "../../images/junglegames-gameplay.png"
-import junglegamesinstructions from "../../images/junglegames-instructions.png"
+import junglegamesStart from "../../images/junglegames-start.jpg"
+import junglegamesInstructions from "../../images/junglegames-instructions.jpg"
+import junglegamesDemo from "../../images/junglegames-demo.jpg"
+import junglegamesPhone from "../../images/junglegames-phone.jpg"
+
 function JungleGames(props) {
   const images = [
     {
-      image: junglegamesgameplay,
+      image: junglegamesStart,
       alt: "gameplay of jungle games",
     },
     {
-      image: junglegamesinstructions,
+      image: junglegamesInstructions,
+      alt: "instruction for jungle games",
+    },
+    {
+      image: junglegamesDemo,
+      alt: "instruction for jungle games",
+    },
+    {
+      image: junglegamesPhone,
       alt: "instruction for jungle games",
     },
   ]

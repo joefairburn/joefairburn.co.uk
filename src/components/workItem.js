@@ -4,7 +4,6 @@ import { useSpring, animated as a, interpolate } from "react-spring"
 function WorkItem(props) {
   const [isHover, setHover] = useState(false)
   const toggleHover = () => {}
-  
 
   return (
     <div
@@ -14,7 +13,7 @@ function WorkItem(props) {
       onClick={props.itemClicked}
     >
       <div className={"portfolio-layout"}>
-      <div className={"item-shadow portfolio-shadow-hover-" + isHover} />
+        <div className={"item-shadow portfolio-shadow-hover-" + isHover} />
         <div className={"portfolio-container"}>
           <div className="image-container">
             <img src={props.image} alt={props.itemName} />
@@ -23,7 +22,6 @@ function WorkItem(props) {
             <p>{props.text}</p>
           </div>
         </div>
-        
       </div>
     </div>
   )
