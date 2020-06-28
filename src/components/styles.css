@@ -86,74 +86,38 @@ main {
   height: 100vh;
 }
 
-.top-row {
+.hero-background > div > span {
+  width: 33%;
+  position: relative;
+  margin-left: 300px;
+  background: rgba(39, 19, 110, 0.6);
+}
+
+.hero-background > div {
   position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.top-row {
   top: 0%;
-}
-
-.top-row :first-child {
-  width: 33%;
-  left: -25%;
-  background: rgba(39, 19, 110, 0.6);
-}
-
-.top-row :nth-child(2) {
-  width: 33%;
-  left: 35%;
-  background: rgba(39, 19, 110, 0.6);
+  left: -45%;
 }
 
 .middle-row {
-  position: absolute;
   top: 30%;
-}
-
-.middle-row :first-child {
-  width: 33%;
-  left: 15%;
-  background: rgba(39, 19, 110, 0.6);
-}
-
-.middle-row :nth-child(2) {
-  width: 33%;
-  left: 65%;
-  background: rgba(39, 19, 110, 0.6);
+  left: -10%;
 }
 
 .bottom-row {
-  position: absolute;
   top: 60%;
-}
-
-.bottom-row :first-child {
-  width: 33%;
-  left: -5%;
-  top: 70%;
-  background: rgba(39, 19, 110, 0.6);
-}
-
-.bottom-row :nth-child(2) {
-  width: 33%;
-  left: 45%;
-  background: rgba(39, 19, 110, 0.6);
-}
-
-.bottom-row :nth-child(3) {
-  width: 33%;
-  left: 95%;
-  background: rgba(39, 19, 110, 0.6);
-}
-
-.bottom-row :nth-child(4) {
-  width: 33%;
-  left: -55%;
-  background: rgba(39, 19, 110, 0.6);
+  left: -30%;
 }
 
 .centered-title {
   position: absolute;
   height: 100%;
-  margin-left: 15rem;
+  margin-left: 10%;
   margin-top: -100px;
   display: flex;
   flex-direction: column;
@@ -162,7 +126,7 @@ main {
 }
 
 .title-name {
-  font-size: 6em;
+  font-size: 6rem;
   margin: 0.67em 0;
   margin-bottom: 1.45rem;
   color: inherit;
@@ -201,7 +165,7 @@ main {
   background: white;
   text-align: center;
   border-radius: 20px;
-  height: 240px;
+  height: max-content;
   width: 350px;
   margin: 20px;
   -webkit-transition: all 0.2s ease; /* Safari prior 6.1 */
@@ -210,14 +174,14 @@ main {
 }
 
 .portfolio-container {
-  height: 100%;
+  height: max-content;
   width: 100%;
   overflow: hidden;
   border-radius: 20px;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   -webkit-transition: all 0.2s ease; /* Safari prior 6.1 */
   transition: all 0.2s ease;
 }
@@ -225,7 +189,7 @@ main {
 .portfolio-layout {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: max-content;
 }
 
 .item-shadow {
@@ -256,6 +220,9 @@ main {
 .image-container > img {
   overflow: hidden;
   max-width: 100%;
+}
+.portfolio-description {
+  padding: 4px 0;
 }
 
 .portfolio-description > p {
@@ -291,12 +258,12 @@ main {
   position: absolute;
   z-index: 1;
   width: 100%;
-  padding: 5%;
+  padding: 50px;
 }
 
 .contact-title {
   position: relative;
-  padding-top: 5%;
+  padding-top: 50px;
 }
 
 .contact-title h1 {
@@ -315,7 +282,7 @@ main {
 
 .contact-list > li {
   display: inline-block;
-  margin: 0 25px;
+  margin: 0 5%;
   color: rgb(235, 230, 230);
   width: 75px;
   height: 75px;
@@ -407,8 +374,8 @@ main {
 .modal-body {
   margin: 0px 25px;
   overflow: auto;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .modal-hidden-true {
@@ -513,4 +480,80 @@ ul {
 .modal-body::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: rgb(128, 128, 128);
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .hero-background > div > span {
+    width: 40%;
+    position: relative;
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+  .top-row {
+    display: none;
+  }
+  .hero-background > div > span {
+    width: 50%;
+    position: relative;
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 500px) {
+  .top-row {
+    display: none;
+  }
+  .hero-background > div > span {
+    width: 50%;
+    position: relative;
+    margin-left: 100px;
+  }
+  .title-name {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .modal {
+    margin: auto 0;
+    width: 100%;
+  }
+  .modal-body,
+  .modal-header {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .top-row {
+    display: none;
+  }
+  .hero-background > div > span {
+    width: 200vw;
+    position: relative;
+    margin-left: 0px;
+    border-radius: 0;
+  }
+
+  .centered-title {
+    margin-top: -50px;
+  }
+
+  .hero-background > .top-row,
+  .hero-background > .bottom-row {
+    display: none;
+  }
+  .middle-row {
+    top: 50px;
+  }
+
+  .middle-row > span {
+    height: 400px;
+    width: 200%;
+  }
+
+  .title-name {
+    font-size: 3rem;
+  }
 }

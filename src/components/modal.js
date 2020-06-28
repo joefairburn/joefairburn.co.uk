@@ -7,7 +7,7 @@ import { useMediaPredicate } from "react-media-hook"
 function Modal(props) {
   const [modalHiddenState, setModalHiddenState] = useState(false)
 
-  const biggerThan600 = useMediaPredicate("(min-width: 600px)")
+  const isUsingMobile = useMediaPredicate("(max-width: 450px)")
 
   const modalBackgroundAnimation = useSpring({
     config: { duration: 200 },
@@ -25,11 +25,15 @@ function Modal(props) {
 
   const modalAnimation = useSpring({
     config: { mass: 1, tension: 210, friction: 21 },
-    top: props.modalIsHidden && biggerThan600 ? 2000 : 0,
-    height: props.modalIsHidden && biggerThan600 ? "0%" : "90%",
-    width: props.modalIsHidden && biggerThan600 ? "0%" : "70%",
+    reset: true,
     from: { top: 2000, height: "0%", width: "0%" },
-    reverse: biggerThan600 && modalHiddenState,
+    to: !props.modalIsHidden && {
+      top: 0,
+      height: isUsingMobile ? "95%" : "90%",
+      width: isUsingMobile ? "98%" : "70%",
+    },
+    reverse: modalHiddenState,
+    // immediate: isUsingMobile,
   })
 
   const clickToClose = () => setModalHiddenState(true)

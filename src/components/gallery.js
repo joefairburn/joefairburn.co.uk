@@ -45,6 +45,7 @@ function Gallery(props) {
         showIndicators={false}
         dynamicHeight={true}
         useKeyboardArrows
+        showThumbs={false}
       >
         {props.images.map((e, index) => (
           <GalleryItem

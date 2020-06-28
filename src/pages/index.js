@@ -69,6 +69,7 @@ function Index() {
           />
           <div className="header-background">
             <div
+              className="hero-background"
               style={{
                 transform: "skewY(-10deg)",
                 width: "100%",
@@ -79,6 +80,7 @@ function Index() {
                 className="top-row"
                 style={{ transform: interpTopRow, width: "100%" }}
               >
+                <span />
                 <span />
                 <span />
               </a.div>
