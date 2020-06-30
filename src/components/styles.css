@@ -282,7 +282,7 @@ main {
 
 .contact-list > li {
   display: inline-block;
-  margin: 0 5%;
+  margin: 0 15px;
   color: rgb(235, 230, 230);
   width: 75px;
   height: 75px;
@@ -346,11 +346,17 @@ main {
 }
 
 .modal-title {
+  display: inline-block;
   margin: 0;
   padding-top: auto;
 }
 
 .modal-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
   margin: auto 0;
 }
 
@@ -429,23 +435,41 @@ ul {
 }
 
 .btn {
-  border-radius: 5px;
+  border-radius: 50px;
   background: #4947ce;
   border: none;
   color: white;
 }
+.btn {
+  text-align: center;
+  width: auto;
+  border-radius: 50px;
+  padding: 0.3em 1.3em;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  background: #4947ce;
+  color: #fff;
+  border: 2px solid #4947ce;
+  cursor: pointer;
+}
 
 .btn:hover {
-  cursor: pointer;
+  background: rgba(255, 255, 255, 0);
+  color: #4947ce;
 }
 
 .btn-indicator {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  padding: 0;
+  border: none;
 }
 
-.btn-indicator > img {
+.btn-indicator:hover {
+  background-color: #4e4cda;
+}
+.btn-indicator > svg {
   color: white;
 }
 
@@ -459,13 +483,29 @@ ul {
   margin-right: 20px;
 }
 
+.btn-visit-project {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  transform: translateY(0.3em);
+  height: fit-content;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
 .gallery-image-container {
   height: 50vh;
+  overflow: hidden;
+}
+.slide,
+.carousel {
+  background: transparent !important;
 }
 
 .gallery-image {
   height: 100%;
   object-fit: scale-down;
+  background-color: white;
 }
 
 .modal-body::-webkit-scrollbar-track {
@@ -499,6 +539,9 @@ ul {
     position: relative;
     margin-left: 100px;
   }
+  .modal-title {
+    font-size: 1.8em;
+  }
 }
 
 @media (min-width: 450px) and (max-width: 500px) {
@@ -512,6 +555,10 @@ ul {
   }
   .title-name {
     font-size: 4rem;
+  }
+
+  .modal-title {
+    font-size: 1.7em;
   }
 }
 
@@ -555,5 +602,8 @@ ul {
 
   .title-name {
     font-size: 3rem;
+  }
+  .modal-title {
+    font-size: 1.5em;
   }
 }

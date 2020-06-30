@@ -4,6 +4,8 @@ import { Keyframes } from "react-spring/renderprops"
 
 import { useMediaPredicate } from "react-media-hook"
 
+import VisitProject from "./visitproject"
+
 function Modal(props) {
   const [modalHiddenState, setModalHiddenState] = useState(false)
 
@@ -44,6 +46,7 @@ function Modal(props) {
         <div className="modal-header">
           <div className="modal-title-container">
             <h1 className="modal-title">{props.title}</h1>
+            {props.url && <VisitProject url={props.url} />}
           </div>
           <div className="modal-x-container">
             <div className="modal-x" onClick={clickToClose} />

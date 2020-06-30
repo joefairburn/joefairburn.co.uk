@@ -48,14 +48,15 @@ function Index() {
       title: "",
       content: <div></div>,
       isHidden: true,
+      url: "",
     })
 
-  const handleModalShow = (title, newText) =>
+  const handleModalShow = (title, newText, url) =>
     setModal({
       title: title,
       content: newText,
       isHidden: false,
-      url: "https://speedtypingtest.netlify.com",
+      url: url,
     })
 
   return (
@@ -132,18 +133,32 @@ function Index() {
               image={typetestimage}
               text={"Typing Test"}
               itemClicked={() =>
-                handleModalShow("Typing Test", <TypeTestText />)
+                handleModalShow(
+                  "Typing Test",
+                  <TypeTestText />,
+                  "https://www.joefairburn.co.uk/typetest"
+                )
               }
             />
             <WorkItem
               text={"StandWith"}
-              itemClicked={() => handleModalShow("StandWith", <StandWith />)}
+              itemClicked={() =>
+                handleModalShow(
+                  "StandWith",
+                  <StandWith />,
+                  "https://standwith.org"
+                )
+              }
             />
             <WorkItem
               image={edenimage}
               text={"Promotional Site"}
               itemClicked={() =>
-                handleModalShow("Promotional Site", <EdenText />)
+                handleModalShow(
+                  "Promotional Site",
+                  <EdenText />,
+                  "https://www.joefairburn.co.uk/eden/"
+                )
               }
             />
           </div>
