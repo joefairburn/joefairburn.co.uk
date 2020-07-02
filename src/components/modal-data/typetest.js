@@ -23,8 +23,12 @@ function TypeTestText(props) {
   return (
     <>
       <Gallery images={images} />
-      This website was created as part of a research project, looking at how to
-      improve users typing speed in typing speed tests. The
+      Typetest was created as part of a research project, looking at how to
+      improve users typing ability in typing tests while using a computer
+      keyboard. I did this by testing participants typing speed and error rate
+      with various typefaces, and sizes. From this I was able to determine the
+      optimal design for the most efficient typing. The result was this website,
+      which was a slightly modified version of the research test.
     </>
   )
 }

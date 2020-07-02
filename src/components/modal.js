@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react"
+import React, { useCallback, useState, useEffect } from "react"
 import { useSpring, animated as a, config } from "react-spring"
 import { Keyframes } from "react-spring/renderprops"
 
@@ -10,6 +10,20 @@ function Modal(props) {
   const [modalHiddenState, setModalHiddenState] = useState(false)
 
   const isUsingMobile = useMediaPredicate("(max-width: 450px)")
+
+  const escFunction = useCallback(event => {
+    if (event.keyCode === 27 && !modalHiddenState) {
+      setModalHiddenState(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false)
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, false)
+    }
+  }, [])
 
   const modalBackgroundAnimation = useSpring({
     config: { duration: 200 },

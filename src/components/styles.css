@@ -222,13 +222,12 @@ main {
   max-width: 100%;
 }
 .portfolio-description {
-  padding: 4px 0;
+  padding: 6px 0;
 }
 
 .portfolio-description > p {
   margin: 0;
   padding: 0;
-  margin-bottom: 5px;
   font-weight: 500;
   letter-spacing: 0.05rem;
 }

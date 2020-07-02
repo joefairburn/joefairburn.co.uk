@@ -162,14 +162,16 @@ function Index() {
               }
             />
           </div>
-          <Modal
-            title={modal.title}
-            url={modal.url}
-            modalIsHidden={modal.isHidden}
-            closeModal={handleModalClose}
-          >
-            {modal.content}
-          </Modal>
+          {!modal.isHidden && (
+            <Modal
+              title={modal.title}
+              url={modal.url}
+              modalIsHidden={modal.isHidden}
+              closeModal={handleModalClose}
+            >
+              {modal.content}
+            </Modal>
+          )}
         </section>
         <section className="contact-me">
           <div className="contact-content">
