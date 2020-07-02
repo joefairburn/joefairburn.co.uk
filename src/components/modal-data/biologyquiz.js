@@ -6,6 +6,8 @@ import quizIncorrect from "../../images/quiz-incorrect.jpg"
 import quizInstructions from "../../images/quiz-instructions.jpg"
 import quizFAQ from "../../images/quiz-FAQ.jpg"
 import quizEnding from "../../images/quiz-ending.jpg"
+import TechUsed from "../techused"
+import Gatsby from "../techstack/gatsby"
 
 function BiologyQuizText(props) {
   const images = [
@@ -66,6 +68,10 @@ function BiologyQuizText(props) {
       <strong className="list-title">
         It was developed in React, using Gatsby and the Ant Design UI library.
       </strong>
+      <TechUsed>
+        <Gatsby />
+      </TechUsed>
+      />
     </>
   )
 }
