@@ -7,7 +7,9 @@ import quizInstructions from "../../images/quiz-instructions.jpg"
 import quizFAQ from "../../images/quiz-FAQ.jpg"
 import quizEnding from "../../images/quiz-ending.jpg"
 import TechUsed from "../techused"
-import Gatsby from "../techstack/gatsby"
+import ReactIcon from "../techstack/react"
+import GatsbyIcon from "../techstack/gatsby"
+import AntdIcon from "../techstack/antd"
 
 function BiologyQuizText(props) {
   const images = [
@@ -41,7 +43,7 @@ function BiologyQuizText(props) {
         worked closely with the client to achieve the specific requirements they
         requested.
       </p>
-      <strong className="list-title">The concept was simple:</strong>
+      <h2 className="list-title">The concept was simple:</h2>
       <ul>
         <li>There were 5 rounds</li>
         <li>
@@ -65,13 +67,11 @@ function BiologyQuizText(props) {
           accessed by the client.
         </li>
       </ul>
-      <strong className="list-title">
-        It was developed in React, using Gatsby and the Ant Design UI library.
-      </strong>
       <TechUsed>
-        <Gatsby />
+        <ReactIcon />
+        <GatsbyIcon />
+        <AntdIcon />
       </TechUsed>
-      />
     </>
   )
 }

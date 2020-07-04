@@ -1,8 +1,13 @@
 import React, { useState } from "react"
 import icon from "../../images/gatsby-icon.png"
 
-const Gatsby = props => {
-  return <img src={icon} className="" alt="gatsby icon" />
+const GatsbyIcon = props => {
+  return (
+    <div className="techstack-item">
+      <img src={icon} className="techstack-icon" alt="gatsby icon" />
+      <h3 className="techstack-title">Gatsby</h3>
+    </div>
+  )
 }
 
-export default Gatsby
+export default GatsbyIcon

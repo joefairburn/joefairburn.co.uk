@@ -23,6 +23,20 @@ import typetestimage from "../images/typetest.jpg"
 import edenimage from "../images/eden-homepage.jpg"
 import Contact from "../components/contact"
 
+import {
+  ReactLogo,
+  Gatsby,
+  NextDotJs,
+  Unity,
+  NodeDotJs,
+  Html5,
+  Css3,
+  Redux,
+  Firebase,
+  Tailwindcss,
+  Bootstrap,
+} from "@styled-icons/simple-icons"
+
 function Index() {
   const [{ st, sk }, set] = useSpring(() => ({ st: 0, sk: 0 }))
   const interpTopRow = st.interpolate(o => `translateX(${o * 0.7}px)`)
@@ -105,14 +119,16 @@ function Index() {
           </div>
 
           <div className="centered-title">
-            <h1 className="title-name">Joe Fairburn</h1>
-            <h2 className="dev-name">Front-end Developer</h2>
+            <h1 className="title-main">Hi, I'm Joe Fairburn</h1>
+            <h2 className="title-desc">
+              I'm not your average Joe. I design and develop websites.
+            </h2>
           </div>
         </header>
 
         <section id="portfolio" className="portfolio-section">
           <div className="portfolio-title">
-            <h1>My Work</h1>
+            <h2>My Work</h2>
           </div>
           <div className="portfolio-items">
             <WorkItem
@@ -121,6 +137,15 @@ function Index() {
               itemClicked={() =>
                 handleModalShow("The Jungle Games", <JungleGamesText />)
               }
+              technologies={[
+                {
+                  icon: <ReactLogo />,
+                  name: "React",
+                },
+                { icon: <Bootstrap />, name: "Bootstrap" },
+                { icon: <Unity />, name: "Unity" },
+                { icon: <NodeDotJs />, name: "Node.js" },
+              ]}
             />
             <WorkItem
               image={biologyquizimage}
@@ -128,6 +153,14 @@ function Index() {
               itemClicked={() =>
                 handleModalShow("Research Quiz", <BiologyQuizText />)
               }
+              technologies={[
+                {
+                  icon: <ReactLogo />,
+                  name: "React",
+                },
+                { icon: <Gatsby />, name: "Gatsby" },
+                ,
+              ]}
             />
             <WorkItem
               image={typetestimage}
@@ -139,8 +172,15 @@ function Index() {
                   "https://www.joefairburn.co.uk/typetest"
                 )
               }
+              technologies={[
+                {
+                  icon: <ReactLogo />,
+                  name: "React",
+                },
+              ]}
             />
             <WorkItem
+              image={typetestimage}
               text={"StandWith"}
               itemClicked={() =>
                 handleModalShow(
@@ -149,6 +189,17 @@ function Index() {
                   "https://standwith.org"
                 )
               }
+              technologies={[
+                {
+                  icon: <ReactLogo />,
+                  name: "React",
+                },
+                { icon: <Redux />, name: "Redux" },
+                { icon: <NextDotJs />, name: "Next.js" },
+                { icon: <Firebase />, name: "Firebase" },
+                { icon: <NodeDotJs />, name: "Node.js" },
+                { icon: <Tailwindcss />, name: "Tailwind" },
+              ]}
             />
             <WorkItem
               image={edenimage}
@@ -160,6 +211,14 @@ function Index() {
                   "https://www.joefairburn.co.uk/eden/"
                 )
               }
+              technologies={[
+                {
+                  icon: <Html5 />,
+                  name: "HTML",
+                },
+                { icon: <Css3 />, name: "CSS" },
+                ,
+              ]}
             />
           </div>
           {!modal.isHidden && (
@@ -176,7 +235,7 @@ function Index() {
         <section className="contact-me">
           <div className="contact-content">
             <div className="contact-title">
-              <h1>Contact Me</h1>
+              <h2>Contact Me</h2>
             </div>
             <div className="contact-container">
               <Contact />

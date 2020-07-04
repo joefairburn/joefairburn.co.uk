@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,500,600,700,800,900&display=swap");
 body {
-  font-family: "Poppins";
+  font-family: "Nunito Sans";
 }
+
+html {
+  cursor: auto !important;
+}
+
 main {
   color: hsla(0, 0%, 0%, 0.671);
   font-weight: normal;
@@ -17,14 +22,7 @@ main {
 h2 {
   font-size: 2em;
   margin: 0.67em 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  padding: 0;
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -125,8 +123,8 @@ main {
   overflow: hidden;
 }
 
-.title-name {
-  font-size: 6rem;
+.title-main {
+  font-size: 4rem;
   margin: 0.67em 0;
   margin-bottom: 1.45rem;
   color: inherit;
@@ -134,11 +132,12 @@ main {
   text-rendering: optimizeLegibility;
   line-height: 1.1;
   color: white;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-.dev-name {
-  font-weight: 400;
+.title-desc {
+  font-size: 1.8rem;
+  font-weight: 300;
   color: #fec21e;
 }
 
@@ -217,6 +216,10 @@ main {
   opacity: 0;
 }
 
+.image-container {
+  position: relative;
+}
+
 .image-container > img {
   overflow: hidden;
   max-width: 100%;
@@ -265,7 +268,7 @@ main {
   padding-top: 50px;
 }
 
-.contact-title h1 {
+.contact-title h2 {
   color: rgb(235, 230, 230);
 }
 
@@ -521,6 +524,85 @@ ul {
   background-color: rgb(128, 128, 128);
 }
 
+.techstack-icon {
+  height: 40px;
+  margin: 0 10px;
+}
+
+.techstack-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.techstack-item {
+  height: 40px;
+  width: 40px;
+  color: white;
+  opacity: 0.5;
+  margin: 10px;
+}
+
+.techstack-item > p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  text-align: center;
+  margin-left: -100%;
+  margin-right: -100%;
+  font-weight: bold;
+}
+
+.techstack-title {
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.techstack-icon-list {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.techstack-hidden-true {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease;
+  visibility: visible;
+}
+
+.techstack-icons-hidden-true {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.05s ease;
+}
+
+.techstack-icons-hidden-false {
+  visibility: visible;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.techstack-builtwith {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.16rem;
+  color: white;
+  opacity: 0.9;
+  margin: 0;
+}
 @media (min-width: 600px) and (max-width: 900px) {
   .hero-background > div > span {
     width: 40%;
