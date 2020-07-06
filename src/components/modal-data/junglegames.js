@@ -29,26 +29,33 @@ function JungleGames(props) {
   return (
     <>
       <Gallery images={images} />
+      <h3>What was it?</h3>
       <p>
-        The Jungle Games is an online multiplayer game, created with three of my
-        peers during my second year at university. The gameplay resembled
-        Jackbox, whereby the primary gameplay is hosted on a client from a
-        computer. Players are then able to interact with the game from their
-        mobile devices, through a web browser. The answers and instructions
-        appeared on the main computer display, where users could then vote for
-        the most accurate or funniest answer. Users gain points throughout the
-        rounds until the final round where a leaderboard is shown, and the
-        winners were displayed. The game consisted of several minigames, all
-        which required each user to interact with their own devices. One of
-        these is an act-it-out game. One player receives a prompt on their phone
-        which they must act out to everyone else. The other players must guess
-        what they think the prompt could be on their phones. Everyone votes on
-        the answers, and points are awarded based on how many votes each player
-        receives. It was my job to choose what technologies to use, and then to
-        code all the software. The main game client which was ran on a computer
-        was created in Unity with C#. The mobile client which was ran through a
-        web browser was created with React. The backend was created with
-        Node.js, using MongoDB to store data.
+        The Jungle Games is an online multiplayer game consisting of three
+        minigames. I created it alongside three of my peers during my second
+        year at university, my role was to implement the games and designs that
+        my team came up with.
+      </p>
+      <h3>How did it work?</h3>
+      <p>
+        The game was hosted on a PC using a client developed in Unity. The
+        players then interacted with the game using their phones to input
+        answers to the prompts which they recieved. They could then vote on
+        whose answers were the best or the wittiest, and the results would then
+        be showed on the PC client.
+      </p>
+      <p>
+        The game was designed as an exhibition piece and was featured at the
+        University of York Interactive Media showcase, where we had over a
+        hundred total players throughout the whole event. The idea was that it
+        would bring strangers together, by encouraging them to open up and be
+        themselves throughout the game.
+      </p>
+      <h3>How was it made?</h3>
+      <p>
+        The backend of the application was hosted using Node.js and Express,
+        with a MongoDB database to store game data. The web application was
+        created using React, and the PC client was made with Unity.
       </p>
     </>
   )

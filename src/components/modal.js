@@ -59,7 +59,7 @@ function Modal(props) {
       <a.div className="modal" style={modalAnimation}>
         <div className="modal-header">
           <div className="modal-title-container">
-            <h1 className="modal-title">{props.title}</h1>
+            <h2 className="modal-title">{props.title}</h2>
             {props.url && <VisitProject url={props.url} />}
           </div>
           <div className="modal-x-container">

@@ -6,11 +6,6 @@ import quizIncorrect from "../../images/quiz-incorrect.jpg"
 import quizInstructions from "../../images/quiz-instructions.jpg"
 import quizFAQ from "../../images/quiz-FAQ.jpg"
 import quizEnding from "../../images/quiz-ending.jpg"
-import TechUsed from "../techused"
-import ReactIcon from "../techstack/react"
-import GatsbyIcon from "../techstack/gatsby"
-import AntdIcon from "../techstack/antd"
-
 function BiologyQuizText(props) {
   const images = [
     {
@@ -37,13 +32,14 @@ function BiologyQuizText(props) {
   return (
     <>
       <Gallery images={images} />
+      <h3>What was it?</h3>
       <p>
-        The project involved creating a bespoke game in the form of a quiz, with
-        the purpose of researching learning techniques amongst students. I
+        This project involved creating a bespoke game in the form of a quiz,
+        with the purpose of researching learning techniques amongst students. I
         worked closely with the client to achieve the specific requirements they
         requested.
       </p>
-      <h2 className="list-title">The concept was simple:</h2>
+      <h3 className="description-title">How did it worked?</h3>
       <ul>
         <li>There were 5 rounds</li>
         <li>
@@ -67,11 +63,12 @@ function BiologyQuizText(props) {
           accessed by the client.
         </li>
       </ul>
-      <TechUsed>
-        <ReactIcon />
-        <GatsbyIcon />
-        <AntdIcon />
-      </TechUsed>
+      <h3>How was it made?</h3>
+      <p>
+        The front-end was created using React and Gatsby. It then used the
+        Google Sheets API to save each individual result to a spreadsheet which
+        could be accessed by the client.
+      </p>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react"
+import React, { useCallback, useState, useEffect } from "react"
 import { useSpring, animated as a, interpolate } from "react-spring"
 import SEO from "../components/seo"
 import WorkItem from "../components/workItem"
@@ -23,6 +23,8 @@ import typetestimage from "../images/typetest.jpg"
 import edenimage from "../images/eden-homepage.jpg"
 import Contact from "../components/contact"
 
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
+
 import {
   ReactLogo,
   Gatsby,
@@ -35,14 +37,16 @@ import {
   Firebase,
   Tailwindcss,
   Bootstrap,
+  Mongodb,
 } from "@styled-icons/simple-icons"
 
 function Index() {
   const [{ st, sk }, set] = useSpring(() => ({ st: 0, sk: 0 }))
-  const interpTopRow = st.interpolate(o => `translateX(${o * 0.7}px)`)
-  const interpMiddleRow = st.interpolate(o => `translateX(${-(o * 0.7)}px)`)
-  const interpBottomRow = st.interpolate(o => `translateX(${o * 0.7}px)`)
+  const interpTopRow = st.interpolate(o => `translateX(${o * -3}px)`)
+  const interpMiddleRow = st.interpolate(o => `translateX(${o * 3}px)`)
+  const interpBottomRow = st.interpolate(o => `translateX(${o * -0.6}px)`)
   const interpRotate = sk.interpolate(o => `skewY(${o}deg)`)
+
   const onScroll = e => {
     if (modal.isHidden) {
       set({
@@ -51,6 +55,14 @@ function Index() {
       })
     }
   }
+
+  useScrollPosition(({ currPos }) => {
+    set({
+      st: currPos.y,
+      sk: Math.min(Math.max(-10, currPos.y * 0.06), 0),
+    })
+  })
+
   const [modal, setModal] = useState({
     title: "",
     content: <div></div>,
@@ -74,15 +86,15 @@ function Index() {
     })
 
   return (
-    <main onScroll={onScroll}>
+    <>
       <div className="index">
         <SEO title="Home" />
         <header>
-          <a.div
-            className="background-image"
-            style={{ transform: interpRotate }}
-          />
           <div className="header-background">
+            <a.div
+              className="background-image"
+              style={{ transform: interpRotate }}
+            />
             <div
               className="hero-background"
               style={{
@@ -96,25 +108,19 @@ function Index() {
                 style={{ transform: interpTopRow, width: "100%" }}
               >
                 <span />
-                <span />
-                <span />
               </a.div>
               <a.div
                 className="middle-row"
                 style={{ transform: interpMiddleRow, width: "100%" }}
               >
                 <span />
-                <span />
               </a.div>
-              <a.div
+              {/* <a.div
                 className="bottom-row"
                 style={{ transform: interpBottomRow, width: "100%" }}
               >
                 <span />
-                <span />
-                <span />
-                <span />
-              </a.div>
+              </a.div> */}
             </div>
           </div>
 
@@ -145,6 +151,7 @@ function Index() {
                 { icon: <Bootstrap />, name: "Bootstrap" },
                 { icon: <Unity />, name: "Unity" },
                 { icon: <NodeDotJs />, name: "Node.js" },
+                { icon: <Mongodb />, name: "MongoDB" },
               ]}
             />
             <WorkItem
@@ -164,10 +171,10 @@ function Index() {
             />
             <WorkItem
               image={typetestimage}
-              text={"Typing Test"}
+              text={"TypeTest"}
               itemClicked={() =>
                 handleModalShow(
-                  "Typing Test",
+                  "TypeTest",
                   <TypeTestText />,
                   "https://www.joefairburn.co.uk/typetest"
                 )
@@ -246,7 +253,7 @@ function Index() {
           </div>
         </section>
       </div>
-    </main>
+    </>
   )
 }
 
