@@ -55,7 +55,7 @@ function Modal(props) {
   const clickToClose = () => setModalHiddenState(true)
 
   return !props.modalIsHidden ? (
-    <div className={"modal-container"}>
+    <div id="modal" className={"modal-container"}>
       <a.div className="modal" style={modalAnimation}>
         <div className="modal-header">
           <div className="modal-title-container">

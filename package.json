@@ -19,6 +19,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-hot-loader": "^4.12.21",
     "react-media-hook": "^0.4.7",
     "react-responsive-carousel": "^3.2.8",
     "react-spring": "^8.0.27",

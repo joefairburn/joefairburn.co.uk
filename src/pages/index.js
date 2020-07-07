@@ -40,6 +40,8 @@ import {
   Mongodb,
 } from "@styled-icons/simple-icons"
 
+import { useMediaPredicate } from "react-media-hook"
+
 function Index() {
   const [{ st, sk }, set] = useSpring(() => ({ st: 0, sk: 0 }))
   const interpTopRow = st.interpolate(o => `translateX(${o * -3}px)`)
@@ -47,20 +49,14 @@ function Index() {
   const interpBottomRow = st.interpolate(o => `translateX(${o * -0.6}px)`)
   const interpRotate = sk.interpolate(o => `skewY(${o}deg)`)
 
-  const onScroll = e => {
-    if (modal.isHidden) {
-      set({
-        st: e.target.scrollTop,
-        sk: Math.min(Math.max(-10, e.target.scrollTop * -0.06), 0),
-      })
-    }
-  }
+  const isUsingMobile = useMediaPredicate("(max-width: 450px)")
 
   useScrollPosition(({ currPos }) => {
-    set({
-      st: currPos.y,
-      sk: Math.min(Math.max(-10, currPos.y * 0.06), 0),
-    })
+    if (!isUsingMobile)
+      set({
+        st: currPos.y,
+        sk: Math.min(Math.max(-10, currPos.y * 0.06), 0),
+      })
   })
 
   const [modal, setModal] = useState({
@@ -69,21 +65,27 @@ function Index() {
     isHidden: true,
   })
 
-  const handleModalClose = () =>
+  const handleModalClose = () => {
+    document.body.style.overflow = "unset"
+    document.body.style.paddingRight = "0px"
     setModal({
       title: "",
       content: <div></div>,
       isHidden: true,
       url: "",
     })
+  }
 
-  const handleModalShow = (title, newText, url) =>
+  const handleModalShow = (title, newText, url) => {
+    document.body.style.overflow = "hidden"
+    document.body.style.paddingRight = "15px"
     setModal({
       title: title,
       content: newText,
       isHidden: false,
       url: url,
     })
+  }
 
   return (
     <>

@@ -1,14 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 body {
   font-family: "Poppins";
-  background: rgb(235, 230, 230);
-}
-
-html {
-  cursor: auto !important;
-}
-
-main {
   color: hsla(0, 0%, 0%, 0.671);
   font-weight: normal;
   word-wrap: break-word;
@@ -18,6 +10,10 @@ main {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   background: rgb(235, 230, 230);
+}
+
+html {
+  cursor: auto !important;
 }
 
 h2 {
@@ -35,6 +31,10 @@ header {
   margin: 0;
   padding: 0;
   height: 100vh;
+}
+
+a:focus {
+  border: 1px solid black;
 }
 
 .header-background {
@@ -85,33 +85,6 @@ main {
   height: 100vh;
 }
 
-/* .hero-background > div > span {
-  width: 33%;
-  position: relative;
-  margin-left: 300px;
-  background: rgba(39, 19, 110, 0.6);
-}
-
-.hero-background > div {
-  position: absolute;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.top-row {
-  top: 0%;
-  left: -45%;
-}
-
-.middle-row {
-  top: 30%;
-  left: -10%;
-}
-
-.bottom-row {
-  top: 60%;
-  left: -30%;
-} */
 .hero-background {
   position: absolute;
   top: 0;
@@ -228,11 +201,20 @@ h2 {
   text-align: center;
   border-radius: 20px;
   height: max-content;
+  overflow: hidden;
   width: 350px;
   margin: 20px;
   -webkit-transition: all 0.2s ease; /* Safari prior 6.1 */
   transition: all 0.2s ease;
   z-index: 1;
+  transform: translateY(0px);
+  text-decoration: none;
+}
+
+.portfolio-item:focus {
+  border-radius: 20px;
+  outline: none;
+  border: none;
 }
 
 .portfolio-container {
@@ -267,8 +249,10 @@ h2 {
   transition: all 0.2s ease;
 }
 
-.portfolio-hover-true {
+.portfolio-item:hover,
+.portfolio-item:focus {
   transform: translateY(-5px);
+  box-shadow: 5px 10px 10px rgba(93, 93, 93, 0.1);
 }
 
 .portfolio-shadow-hover-true {
@@ -307,15 +291,17 @@ h2 {
 
 .background-container {
   position: absolute;
-  overflow: hidden;
+  overflow-x: visible;
+  overflow-y: hidden;
   top: -200px;
   width: 100%;
   height: 300%;
+  z-index: -10;
 }
 
 .second-image {
   position: absolute;
-  z-index: 0;
+
   top: 300px;
   transform: skewY(-10deg);
 }
@@ -324,12 +310,13 @@ h2 {
   position: absolute;
   z-index: 1;
   width: 100%;
-  padding: 50px;
+  margin-top: 125px;
 }
 
 .contact-title {
   position: relative;
-  padding-top: 50px;
+
+  margin-left: 50px;
 }
 
 .contact-title h2 {
@@ -350,6 +337,12 @@ h2 {
   display: inline-block;
   margin: 0 15px;
   color: rgb(235, 230, 230);
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+}
+.contact-list > li > a {
+  display: inline-block;
   width: 75px;
   height: 75px;
   overflow: hidden;
@@ -600,12 +593,15 @@ ul {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.2s ease;
+  visibility: hidden;
+
+  transition: opacity 0.2s ease;
 }
 
 .techstack-item {
@@ -644,24 +640,6 @@ ul {
   flex-wrap: wrap;
 }
 
-.techstack-hidden-true {
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.2s ease;
-  visibility: visible;
-}
-
-.techstack-icons-hidden-true {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.05s ease;
-}
-
-.techstack-icons-hidden-false {
-  visibility: visible;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-}
-
 .techstack-builtwith {
   text-transform: uppercase;
   font-size: 1rem;
@@ -670,37 +648,17 @@ ul {
   opacity: 0.9;
   margin: 0;
 }
+
 @media (min-width: 600px) and (max-width: 900px) {
-  .hero-background > div > span {
-    width: 40%;
-    position: relative;
-    margin-left: 100px;
-  }
 }
 
 @media (min-width: 500px) and (max-width: 600px) {
-  .top-row {
-    display: none;
-  }
-  .hero-background > div > span {
-    width: 50%;
-    position: relative;
-    margin-left: 100px;
-  }
   .modal-title {
     font-size: 1.8em;
   }
 }
 
 @media (min-width: 450px) and (max-width: 500px) {
-  .top-row {
-    display: none;
-  }
-  .hero-background > div > span {
-    width: 50%;
-    position: relative;
-    margin-left: 100px;
-  }
   .title-name {
     font-size: 4rem;
   }
@@ -721,31 +679,8 @@ ul {
     margin-right: 15px;
   }
 
-  .top-row {
-    display: none;
-  }
-  .hero-background > div > span {
-    width: 200vw;
-    position: relative;
-    margin-left: 0px;
-    border-radius: 0;
-  }
-
   .centered-title {
     margin-top: -50px;
-  }
-
-  .hero-background > .top-row,
-  .hero-background > .bottom-row {
-    display: none;
-  }
-  .middle-row {
-    top: 50px;
-  }
-
-  .middle-row > span {
-    height: 400px;
-    width: 200%;
   }
 
   .title-name {
@@ -754,4 +689,18 @@ ul {
   .modal-title {
     font-size: 1.5em;
   }
+}
+
+.portfolio-item:focus > .image-container > .techstack-container,
+.portfolio-item:hover > .image-container > .techstack-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.techstack-container {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
 }

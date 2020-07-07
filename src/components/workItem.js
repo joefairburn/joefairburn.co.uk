@@ -6,37 +6,38 @@ function WorkItem(props) {
   const [isHover, setHover] = useState(false)
   const toggleHover = () => {}
 
+  const linkClicked = e => {
+    e.preventDefault()
+    props.itemClicked()
+  }
+
   return (
-    <div
-      className={"portfolio-item portfolio-hover-" + isHover}
-      onMouseEnter={() => setHover(true)}
+    <a
+      href="#modal"
+      className={"portfolio-item"}
       onMouseLeave={() => setHover(false)}
-      onClick={props.itemClicked}
+      onClick={linkClicked}
+      tabIndex="0"
     >
-      <div className={"portfolio-layout"}>
-        <div className={"item-shadow portfolio-shadow-hover-" + isHover} />
-        <div className={"portfolio-container"}>
-          <div className="image-container">
-            <TechUsed
-              className={`techstack-hidden-${!isHover}`}
-              isHidden={!isHover}
-            >
-              {props.technologies &&
-                props.technologies.map(tech => (
-                  <div className="techstack-item">
-                    {tech.icon}
-                    <p>{tech.name}</p>
-                  </div>
-                ))}
-            </TechUsed>
-            <img src={props.image} alt={props.itemName} />
-          </div>
-          <div className="portfolio-description">
-            <p>{props.text}</p>
-          </div>
-        </div>
+      <div className="image-container">
+        <TechUsed
+          className={`techstack-hidden-${!isHover}`}
+          isHidden={!isHover}
+        >
+          {props.technologies &&
+            props.technologies.map((tech, index) => (
+              <div className="techstack-item" key={index}>
+                {tech.icon}
+                <p>{tech.name}</p>
+              </div>
+            ))}
+        </TechUsed>
+        <img src={props.image} alt={props.itemName} />
       </div>
-    </div>
+      <div className="portfolio-description">
+        <p>{props.text}</p>
+      </div>
+    </a>
   )
 }
 
