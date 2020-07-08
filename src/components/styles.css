@@ -30,6 +30,12 @@ a:focus {
   border: 1px solid black;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* INTRO */
 
 .intro {
@@ -39,7 +45,9 @@ a:focus {
   height: 100vh;
 }
 
-.intro-background {
+/* Intro background */
+
+.intro-background-layer {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -65,7 +73,7 @@ a:focus {
   );
 }
 
-.hero-background {
+.intro-background-tiles {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,34 +82,20 @@ a:focus {
   overflow: hidden;
 }
 
-.hero-background > div {
+.intro-background-tiles > div {
   position: absolute;
   display: inline-block;
   white-space: nowrap;
-}
-
-.background-block {
-  width: 100%;
-  position: relative;
-  margin-left: 0px;
-  border-radius: 0;
-  border-style: hidden;
-  display: inline-block;
-}
-
-.back-row {
   left: 0;
   padding: 0;
   margin: 0;
-  width: auto;
-  height: 100%;
   bottom: 0;
-  top: auto;
 }
 
-.back-row > span {
+.back-row {
+  width: auto;
   height: 100%;
-  width: 100%;
+  top: auto;
 }
 
 .front-row {
@@ -110,128 +104,81 @@ a:focus {
   height: 80%;
 }
 
-.front-row > span {
+.tile {
+  display: block;
   height: 100%;
-  width: 110%;
+  width: 100%;
+}
+
+.front-row > .tile {
   background: #27136e;
 }
 
-.back-row > span {
+.back-row > .tile {
   background: #3d2b7d56;
 }
-.centered-title {
+
+/* Intro text */
+
+.intro-centered-title {
   position: absolute;
-  top: 0;
-  max-height: 500px;
+  top: 10%;
   margin-left: 10%;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  margin-top: 0;
 }
 
-.title-main {
+.intro-title-main {
   font-size: 4rem;
-  margin: 0.67em 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  line-height: 1.1;
+  margin-bottom: 0.5rem;
   color: white;
   font-weight: 700;
 }
 
-.title-desc {
+.intro-title-desc {
+  margin-top: 0.5rem;
   font-size: 1.8rem;
   font-weight: 300;
   color: #fec21e;
 }
 
-.portfolio-section {
-  min-height: 100vh;
-  margin: 5%;
-  overflow: hidden;
-}
+/* PORTFOLIO */
 
-h2 {
-  color: hsla(0, 0%, 0%, 0.671);
+.portfolio-section {
+  margin: 5%;
 }
 
 .portfolio-items {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  flex: 0 0 50%;
 }
 
 .portfolio-item {
   cursor: pointer;
   background: white;
-  text-align: center;
   border-radius: 20px;
   height: max-content;
   overflow: hidden;
   width: 350px;
   margin: 20px;
-  -webkit-transition: all 0.2s ease; /* Safari prior 6.1 */
-  transition: all 0.2s ease;
   z-index: 1;
   transform: translateY(0px);
   text-decoration: none;
-}
-
-.portfolio-item:focus {
-  border-radius: 20px;
-  outline: none;
-  border: none;
-}
-
-.portfolio-container {
-  height: max-content;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 20px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  -webkit-transition: all 0.2s ease; /* Safari prior 6.1 */
   transition: all 0.2s ease;
 }
 
-.portfolio-layout {
-  position: relative;
-  width: 100%;
-  height: max-content;
-}
-
-.item-shadow {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 20px;
-  box-shadow: 5px 10px 10px rgba(93, 93, 93, 0.1);
-  -webkit-transition: all 0.2s ease; /* Safari prior 6.1 */
-  transition: all 0.2s ease;
-}
-
+/* For when individual item is focused/hovered */
 .portfolio-item:hover,
 .portfolio-item:focus {
   transform: translateY(-5px);
   box-shadow: 5px 10px 10px rgba(93, 93, 93, 0.1);
 }
-
-.portfolio-shadow-hover-true {
-  opacity: 1;
-}
-
-.portfolio-shadow-hover-false {
-  opacity: 0;
+.portfolio-item:focus {
+  outline: none;
+  border: none;
 }
 
 .image-container {
@@ -243,7 +190,7 @@ h2 {
   max-width: 100%;
 }
 .portfolio-description {
-  padding: 6px 0;
+  padding: 6px;
 }
 
 .portfolio-description > p {
@@ -252,10 +199,13 @@ h2 {
   font-weight: 500;
   letter-spacing: 0.05rem;
   color: hsla(0, 0%, 0%, 0.671);
+  text-align: center;
 }
 
+/* CONTACT  */
+
 .contact-me {
-  height: 30vh;
+  height: 200px;
   position: relative;
   top: -100px;
 }
@@ -267,12 +217,11 @@ h2 {
   top: -200px;
   width: 100%;
   height: 300%;
-  z-index: -10;
+  z-index: 0;
 }
 
 .second-image {
   position: absolute;
-
   top: 300px;
   transform: skewY(-10deg);
 }
@@ -286,7 +235,6 @@ h2 {
 
 .contact-title {
   position: relative;
-
   margin-left: 50px;
 }
 
@@ -295,49 +243,41 @@ h2 {
 }
 
 .contact-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  overflow: hidden;
   flex-wrap: wrap;
 }
 
 .contact-list > li {
-  display: inline-block;
   margin: 0 15px;
   color: rgb(235, 230, 230);
   width: 75px;
   height: 75px;
-  overflow: hidden;
 }
+
 .contact-list > li > a {
-  display: inline-block;
   width: 75px;
   height: 75px;
   overflow: hidden;
 }
+
+/* MODAL */
 
 .modal-container {
   position: fixed;
   top: 0;
   left: 0;
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 5;
   opacity: 1;
-  overflow: hidden;
 }
 
 .modal-background {
-  position: absolute;
-  display: block;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -346,16 +286,13 @@ h2 {
 }
 
 .modal {
+  z-index: 10;
   position: fixed;
-  /* width: 80%;
-  height: 80%; */
-  z-index: 2;
   background-color: white;
   border-radius: 20px;
   top: 0;
   bottom: 0;
   margin: auto;
-  display: inline-block;
 }
 
 .modal-header,
@@ -364,8 +301,18 @@ h2 {
 }
 
 .modal-body {
-  overflow: auto;
   max-height: 80%;
+  margin: 0px 25px;
+  overflow: auto;
+  padding: 5px 0;
+}
+
+.modal-body > h3 {
+  display: block;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .modal-body > p {
@@ -375,15 +322,11 @@ h2 {
 .modal-header {
   min-height: 10%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   border-bottom: 2px solid rgb(235, 230, 230);
 }
 
 .modal-title {
-  display: inline-block;
   margin: 0;
-  padding-top: auto;
 }
 
 .modal-title-container {
@@ -400,11 +343,9 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
 }
 
 .modal-x {
-  overflow: hidden;
   height: 20px;
   width: 20px;
   background-color: black;
@@ -413,37 +354,7 @@ h2 {
   cursor: pointer;
 }
 
-.modal-body {
-  margin: 0px 25px;
-  overflow: auto;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-.modal-hidden-true {
-  display: none;
-}
-
-.modal-hidden-false {
-  opacity: 1;
-}
-
-.modal-body h3 {
-  display: block;
-  font-size: 1.3rem;
-  margin-top: 20px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-ul {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.junglegames-image {
-  width: 400px;
-}
+/* Carousel within modal */
 
 .carousel {
   height: 100%;
@@ -452,72 +363,12 @@ ul {
 .carousel-buttons > .btn {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 100;
 }
 
 .carousel-container {
   position: relative;
-  display: block;
-}
-
-.btn {
-  border-radius: 50px;
-  background: #4947ce;
-  border: none;
-  color: white;
-}
-.btn {
-  text-align: center;
-  width: auto;
-  border-radius: 50px;
-  padding: 0.3em 1.3em;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-  background: #4947ce;
-  color: #fff;
-  border: 2px solid #4947ce;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: rgba(255, 255, 255, 0);
-  color: #4947ce;
-}
-
-.btn-indicator {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  padding: 0;
-  border: none;
-}
-
-.btn-indicator:hover {
-  background-color: #4e4cda;
-}
-.btn-indicator > svg {
-  color: white;
-}
-
-.btn-previous {
-  left: 0;
-  margin-left: 20px;
-}
-
-.btn-next {
-  right: 0;
-  margin-right: 20px;
-}
-
-.btn-visit-project {
-  position: relative;
-  display: inline-block;
-  margin: auto;
-  height: fit-content;
-  margin-right: 30px;
-  text-decoration: none;
 }
 
 .gallery-image-container {
@@ -535,6 +386,57 @@ ul {
   background-color: white;
 }
 
+/* Modal buttons */
+
+.btn {
+  border-radius: 50px;
+  background: #4947ce;
+  border: 2px solid #4947ce;
+  color: white;
+  text-align: center;
+  width: auto;
+  padding: 0.3em 1.3em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0);
+  color: #4947ce;
+}
+
+.btn-indicator {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+}
+
+.btn-indicator:hover {
+  background-color: #4e4cda;
+}
+
+.btn-indicator > svg {
+  color: white;
+}
+
+.btn-previous {
+  left: 0;
+  margin-left: 20px;
+}
+
+.btn-next {
+  right: 0;
+  margin-right: 20px;
+}
+
+.btn-visit-project {
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+/* Modal scrollbar */
 .modal-body::-webkit-scrollbar-track {
   border-radius: 8px;
   background-color: #dfdfdf;
@@ -569,6 +471,8 @@ ul {
   transition: opacity 0.2s ease;
 }
 
+/* Techstack used within cards */
+
 .techstack-item {
   height: 40px;
   width: 40px;
@@ -579,21 +483,21 @@ ul {
 
 .techstack-item > p {
   margin: 0;
-  padding: 0;
   font-size: 0.7rem;
+  font-weight: 600;
   white-space: nowrap;
   text-align: center;
   margin-left: -100%;
   margin-right: -100%;
-  font-weight: 600;
 }
 
 .techstack-title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.16rem;
   color: white;
+  opacity: 0.9;
   margin: 0;
-  padding: 0;
-  font-size: 12px;
-  font-weight: 200;
 }
 
 .techstack-icon-list {
@@ -605,21 +509,12 @@ ul {
   flex-wrap: wrap;
 }
 
-.techstack-builtwith {
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.16rem;
-  color: white;
-  opacity: 0.9;
-  margin: 0;
-}
-
 @media (max-width: 900px) {
   .contact-title {
     margin-left: 0px;
     text-align: center;
   }
-  .title-main {
+  .intro-title-main {
     font-size: 3rem;
   }
 }

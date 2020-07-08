@@ -90,13 +90,13 @@ function Index() {
     <>
       <SEO title="Home" />
       <section className="intro">
-        <div className="intro-background" aria-hidden="true">
+        <div className="intro-background-layer" aria-hidden="true">
           <a.div
             className="background-image"
             style={{ transform: interpRotate }}
           />
           <div
-            className="hero-background"
+            className="intro-background-tiles"
             style={{
               transform: "skewY(-10deg)",
               width: "100%",
@@ -107,20 +107,20 @@ function Index() {
               className="back-row"
               style={{ transform: interpBackRow, width: "100%" }}
             >
-              <span className="background-block" />
+              <span className="tile" />
             </a.div>
             <a.div
               className="front-row"
               style={{ transform: interpFrontRow, width: "100%" }}
             >
-              <span className="background-block" />
+              <span className="tile" />
             </a.div>
           </div>
         </div>
 
-        <div className="centered-title">
-          <h1 className="title-main">Hi, I'm Joe Fairburn</h1>
-          <h2 className="title-desc">
+        <div className="intro-centered-title">
+          <h1 className="intro-title-main">Hi, I'm Joe Fairburn</h1>
+          <h2 className="intro-title-desc">
             I'm not your average Joe. I design and develop websites.
           </h2>
         </div>
@@ -190,29 +190,29 @@ function Index() {
                 name: "React",
               },
             ]}
-          />
-          <WorkItem
-            background={{ image: typetestimage, alt: "" }}
-            text={"StandWith"}
-            itemClicked={() =>
-              handleModalShow(
-                "StandWith",
-                <StandWith />,
-                "https://standwith.org"
-              )
-            }
-            technologies={[
-              {
-                icon: <ReactLogo />,
-                name: "React",
-              },
-              { icon: <Redux />, name: "Redux" },
-              { icon: <NextDotJs />, name: "Next.js" },
-              { icon: <Firebase />, name: "Firebase" },
-              { icon: <NodeDotJs />, name: "Node.js" },
-              { icon: <Tailwindcss />, name: "Tailwind" },
-            ]}
-          />
+          // />
+          // <WorkItem
+          //   background={{ image: typetestimage, alt: "" }}
+          //   text={"StandWith"}
+          //   itemClicked={() =>
+          //     handleModalShow(
+          //       "StandWith",
+          //       <StandWith />,
+          //       "https://standwith.org"
+          //     )
+          //   }
+          //   technologies={[
+          //     {
+          //       icon: <ReactLogo />,
+          //       name: "React",
+          //     },
+          //     { icon: <Redux />, name: "Redux" },
+          //     { icon: <NextDotJs />, name: "Next.js" },
+          //     { icon: <Firebase />, name: "Firebase" },
+          //     { icon: <NodeDotJs />, name: "Node.js" },
+          //     { icon: <Tailwindcss />, name: "Tailwind" },
+          //   ]}
+          // />
           <WorkItem
             background={{
               image: edenimage,
