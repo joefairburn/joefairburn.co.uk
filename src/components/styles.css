@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap");
 body {
   font-family: "Poppins";
   color: hsla(0, 0%, 0%, 0.671);
-  font-weight: normal;
+  font-weight: 400;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -10,6 +10,7 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   background: rgb(235, 230, 230);
+  overflow-x: hidden;
 }
 
 html {
@@ -21,19 +22,13 @@ h2 {
   margin: 0.67em 0;
   padding: 0;
   color: inherit;
-  font-weight: bold;
+  font-weight: 600;
   text-rendering: optimizeLegibility;
   line-height: 1.1;
 }
 
 a:focus {
   border: 1px solid black;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 /* INTRO */
@@ -43,6 +38,9 @@ ul {
   margin: 0;
   padding: 0;
   height: 100vh;
+  max-height: 1024px;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Intro background */
@@ -122,7 +120,7 @@ ul {
 
 .intro-centered-title {
   position: absolute;
-  top: 10%;
+  top: 20%;
   margin-left: 10%;
   display: flex;
   flex-direction: column;
@@ -134,14 +132,17 @@ ul {
   font-size: 4rem;
   margin-bottom: 0.5rem;
   color: white;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .intro-title-desc {
   margin-top: 0.5rem;
   font-size: 1.8rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #fec21e;
+  margin-right: 2rem;
+  line-height: 1.2;
 }
 
 /* PORTFOLIO */
@@ -196,7 +197,7 @@ ul {
 .portfolio-description > p {
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.05rem;
   color: hsla(0, 0%, 0%, 0.671);
   text-align: center;
@@ -205,9 +206,10 @@ ul {
 /* CONTACT  */
 
 .contact-me {
-  height: 200px;
+  height: 300px;
   position: relative;
-  top: -100px;
+  bottom: 0px;
+  margin-top: -50px;
 }
 
 .background-container {
@@ -215,14 +217,16 @@ ul {
   overflow-x: visible;
   overflow-y: hidden;
   top: -200px;
-  width: 100%;
-  height: 300%;
+  width: 100vw;
+  height: 600px;
   z-index: 0;
+  overflow-x: visible;
 }
 
 .second-image {
   position: absolute;
   top: 300px;
+  height: 800px;
   transform: skewY(-10deg);
 }
 
@@ -257,9 +261,16 @@ ul {
 }
 
 .contact-list > li > a {
-  width: 75px;
-  height: 75px;
+  display: block;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+}
+
+.contact-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* MODAL */
@@ -271,7 +282,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: 5;
   opacity: 1;
@@ -316,7 +327,7 @@ ul {
 }
 
 .modal-body > p {
-  margin: 8px 0;
+  margin: 3px 0;
 }
 
 .modal-header {
@@ -515,7 +526,11 @@ ul {
     text-align: center;
   }
   .intro-title-main {
-    font-size: 3rem;
+    font-size: 2.8rem;
+  }
+
+  .intro-title-desc {
+    font-size: 1.5rem;
   }
 }
 
@@ -525,9 +540,9 @@ ul {
   }
 }
 
-@media (min-width: 450px) and (max-width: 500px) {
-  .title-name {
-    font-size: 4rem;
+@media (min-width: 430px) and (max-width: 510px) {
+  .intro-title-main {
+    font-size: 2.3rem;
   }
 
   .modal-title {
@@ -535,8 +550,8 @@ ul {
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .modal {
+@media (max-width: 430px) {
+  .modal-container {
     margin: auto 0;
     width: 100%;
   }
@@ -550,11 +565,11 @@ ul {
     margin-top: -50px;
   }
 
-  .title-name {
-    font-size: 3rem;
+  .intro-title-main {
+    font-size: 1.8rem;
   }
-  .modal-title {
-    font-size: 1.5em;
+  .intro-title-desc {
+    font-size: 1.2rem;
   }
 }
 

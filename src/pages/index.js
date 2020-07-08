@@ -45,17 +45,17 @@ import { useMediaPredicate } from "react-media-hook";
 function Index() {
   const [{ st, sk }, set] = useSpring(() => ({ st: 0, sk: 0 }));
   const interpBackRow = st.interpolate(o => `translateX(${o * -3}px)`);
-  const interpFrontRow = st.interpolate(o => `translateX(${o * 3}px)`);
+  const interpFrontRow = st.interpolate(o => `translateX(${o * 2}px)`);
   const interpRotate = sk.interpolate(o => `skewY(${o}deg)`);
 
   const isUsingMobile = useMediaPredicate("(max-width: 450px)");
 
   useScrollPosition(({ currPos }) => {
-    if (!isUsingMobile)
-      set({
-        st: currPos.y,
-        sk: Math.min(Math.max(-10, currPos.y * 0.06), 0),
-      });
+    // if (!isUsingMobile)
+    set({
+      st: currPos.y,
+      sk: Math.min(Math.max(-10, currPos.y * 0.06), 0),
+    });
   });
 
   const [modal, setModal] = useState({
@@ -65,7 +65,7 @@ function Index() {
   });
 
   const handleModalClose = () => {
-    document.body.style.overflow = "unset";
+    document.body.style.overflowY = "unset";
     document.body.style.paddingRight = "0px";
     setModal({
       title: "",
@@ -76,7 +76,7 @@ function Index() {
   };
 
   const handleModalShow = (title, newText, url) => {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
     document.body.style.paddingRight = "15px";
     setModal({
       title: title,
@@ -190,29 +190,29 @@ function Index() {
                 name: "React",
               },
             ]}
-          // />
-          // <WorkItem
-          //   background={{ image: typetestimage, alt: "" }}
-          //   text={"StandWith"}
-          //   itemClicked={() =>
-          //     handleModalShow(
-          //       "StandWith",
-          //       <StandWith />,
-          //       "https://standwith.org"
-          //     )
-          //   }
-          //   technologies={[
-          //     {
-          //       icon: <ReactLogo />,
-          //       name: "React",
-          //     },
-          //     { icon: <Redux />, name: "Redux" },
-          //     { icon: <NextDotJs />, name: "Next.js" },
-          //     { icon: <Firebase />, name: "Firebase" },
-          //     { icon: <NodeDotJs />, name: "Node.js" },
-          //     { icon: <Tailwindcss />, name: "Tailwind" },
-          //   ]}
-          // />
+          />
+          {/* <WorkItem
+            background={{ image: typetestimage, alt: "" }}
+            text={"StandWith"}
+            itemClicked={() =>
+              handleModalShow(
+                "StandWith",
+                <StandWith />,
+                "https://standwith.org"
+              )
+            }
+            technologies={[
+              {
+                icon: <ReactLogo />,
+                name: "React",
+              },
+              { icon: <Redux />, name: "Redux" },
+              { icon: <NextDotJs />, name: "Next.js" },
+              { icon: <Firebase />, name: "Firebase" },
+              { icon: <NodeDotJs />, name: "Node.js" },
+              { icon: <Tailwindcss />, name: "Tailwind" },
+            ]}
+          /> */}
           <WorkItem
             background={{
               image: edenimage,

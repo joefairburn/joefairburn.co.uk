@@ -71,7 +71,7 @@ function Modal(props) {
             {props.url && <VisitProject url={props.url} />}
           </div>
           <div className="modal-x-container">
-            <a
+            <button
               className="modal-x"
               onClick={clickToClose}
               onKeyDown={clickToClose}
