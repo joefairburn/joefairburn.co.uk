@@ -1,28 +1,28 @@
-import React, { useState } from "react"
-import { Carousel } from "react-responsive-carousel"
-import GalleryItem from "./galleryitem"
+import React, { useState } from "react";
+import { Carousel } from "react-responsive-carousel";
+import GalleryItem from "./galleryitem";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import Button from "./button"
+import Button from "./button";
 
-import PreviousIcon from "../images/icons8_previous.inline.svg"
-import NextIcon from "../images/icons8_next.inline.svg"
+import PreviousIcon from "../images/icons8_previous.inline.svg";
+import NextIcon from "../images/icons8_next.inline.svg";
 
 function Gallery(props) {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide(currentSlide + 1)
-  }
+    setCurrentSlide(currentSlide + 1);
+  };
   const previousSlide = () => {
-    setCurrentSlide(currentSlide - 1)
-  }
+    setCurrentSlide(currentSlide - 1);
+  };
 
   const updateCurrentSlide = index => {
     //re-sync state with carousel
-    if (currentSlide !== index) setCurrentSlide(index)
-  }
+    if (currentSlide !== index) setCurrentSlide(index);
+  };
 
   return (
     <div className="carousel-container">
@@ -44,9 +44,7 @@ function Gallery(props) {
         showStatus={false}
         showIndicators={false}
         dynamicHeight={true}
-        useKeyboardArrows
         showThumbs={false}
-        useKeyboardArrows={true}
       >
         {props.images.map((e, index) => (
           <GalleryItem
@@ -58,7 +56,7 @@ function Gallery(props) {
         ))}
       </Carousel>
     </div>
-  )
+  );
 }
 
-export default Gallery
+export default Gallery;

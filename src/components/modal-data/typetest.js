@@ -1,9 +1,9 @@
-import React from "react"
-import Gallery from "../gallery"
+import React from "react";
+import Gallery from "../gallery";
 
-import typetest from "../../images/typetest.jpg"
-import typetestProfile from "../../images/typetest-profile.jpg"
-import typetestWPM from "../../images/typetest-WPM.jpg"
+import typetest from "../../images/typetest.jpg";
+import typetestProfile from "../../images/typetest-profile.jpg";
+import typetestWPM from "../../images/typetest-WPM.jpg";
 
 function TypeTestText(props) {
   const images = [
@@ -19,7 +19,7 @@ function TypeTestText(props) {
       image: typetestProfile,
       alt: "instruction for jungle games",
     },
-  ]
+  ];
   return (
     <>
       <Gallery images={images} />
@@ -40,7 +40,7 @@ function TypeTestText(props) {
       <h3>How was it made?</h3>
       <p>It was created in React using create-react-app.</p>
     </>
-  )
+  );
 }
 
-export default TypeTestText
+export default TypeTestText;

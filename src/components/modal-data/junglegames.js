@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
-import Gallery from "../gallery"
+import Gallery from "../gallery";
 
-import junglegamesStart from "../../images/junglegames-start.jpg"
-import junglegamesInstructions from "../../images/junglegames-instructions.jpg"
-import junglegamesDemo from "../../images/junglegames-demo.jpg"
-import junglegamesPhone from "../../images/junglegames-phone.jpg"
+import junglegamesStart from "../../images/junglegames-start.jpg";
+import junglegamesInstructions from "../../images/junglegames-instructions.jpg";
+import junglegamesDemo from "../../images/junglegames-demo.jpg";
+import junglegamesPhone from "../../images/junglegames-phone.jpg";
 
 function JungleGames(props) {
   const images = [
@@ -25,7 +25,7 @@ function JungleGames(props) {
       image: junglegamesPhone,
       alt: "instruction for jungle games",
     },
-  ]
+  ];
   return (
     <>
       <Gallery images={images} />
@@ -58,7 +58,7 @@ function JungleGames(props) {
         created using React, and the PC client was made with Unity.
       </p>
     </>
-  )
+  );
 }
 
-export default JungleGames
+export default JungleGames;

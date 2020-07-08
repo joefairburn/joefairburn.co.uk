@@ -1,7 +1,7 @@
-import React from "react"
-import EmailIcon from "../images/icons8_envelope.inline.svg"
-import GitHubIcon from "../images/icons8_github.inline.svg"
-import LinkedinIcon from "../images/icons8_linkedin.inline.svg"
+import React from "react";
+import EmailIcon from "../images/icons8_envelope.inline.svg";
+import GitHubIcon from "../images/icons8_github.inline.svg";
+import LinkedinIcon from "../images/icons8_linkedin.inline.svg";
 
 const Contact = () => {
   return (
@@ -37,7 +37,7 @@ const Contact = () => {
         </a>
       </li>
     </ul>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

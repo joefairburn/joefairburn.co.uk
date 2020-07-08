@@ -1,11 +1,11 @@
-import React from "react"
-import Gallery from "../gallery"
+import React from "react";
+import Gallery from "../gallery";
 
-import edenHomepage from "../../images/eden-homepage.jpg"
-import edenContact from "../../images/eden-contact.jpg"
-import edenMusic from "../../images/eden-music.jpg"
-import edenStore from "../../images/eden-store.jpg"
-import edenTour from "../../images/eden-tour.jpg"
+import edenHomepage from "../../images/eden-homepage.jpg";
+import edenContact from "../../images/eden-contact.jpg";
+import edenMusic from "../../images/eden-music.jpg";
+import edenStore from "../../images/eden-store.jpg";
+import edenTour from "../../images/eden-tour.jpg";
 
 function EdenText(props) {
   const images = [
@@ -29,7 +29,7 @@ function EdenText(props) {
       image: edenTour,
       alt: "instruction for jungle games",
     },
-  ]
+  ];
   return (
     <>
       <Gallery images={images} />
@@ -59,7 +59,7 @@ function EdenText(props) {
       <h3>How was it made?</h3>
       <p>The site was created using HTML and CSS.</p>
     </>
-  )
+  );
 }
 
-export default EdenText
+export default EdenText;

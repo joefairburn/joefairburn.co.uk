@@ -1,29 +1,31 @@
-import React, { useCallback, useState, useEffect } from "react"
-import { useSpring, animated as a, config } from "react-spring"
-import { Keyframes } from "react-spring/renderprops"
+import React, { useCallback, useState, useEffect } from "react";
+import { useSpring, animated as a } from "react-spring";
 
-import { useMediaPredicate } from "react-media-hook"
+import { useMediaPredicate } from "react-media-hook";
 
-import VisitProject from "./visitproject"
+import VisitProject from "./visitproject";
 
 function Modal(props) {
-  const [modalHiddenState, setModalHiddenState] = useState(false)
+  const [modalHiddenState, setModalHiddenState] = useState(false);
 
-  const isUsingMobile = useMediaPredicate("(max-width: 450px)")
+  const isUsingMobile = useMediaPredicate("(max-width: 450px)");
 
-  const escFunction = useCallback(event => {
-    if (event.keyCode === 27 && !modalHiddenState) {
-      setModalHiddenState(true)
-    }
-  }, [])
+  const escFunction = useCallback(
+    event => {
+      if (event.keyCode === 27 && !modalHiddenState) {
+        setModalHiddenState(true);
+      }
+    },
+    [modalHiddenState]
+  );
 
   useEffect(() => {
-    document.addEventListener("keydown", escFunction, false)
+    document.addEventListener("keydown", escFunction, false);
 
     return () => {
-      document.removeEventListener("keydown", escFunction, false)
-    }
-  }, [])
+      document.removeEventListener("keydown", escFunction, false);
+    };
+  }, [escFunction]);
 
   const modalBackgroundAnimation = useSpring({
     config: { duration: 200 },
@@ -31,13 +33,13 @@ function Modal(props) {
     from: { opacity: 0 },
     reverse: modalHiddenState,
     onRest: () => {
-      console.log("dsa")
+      console.log("dsa");
       if (modalHiddenState === true) {
-        setModalHiddenState(false)
-        props.closeModal()
+        setModalHiddenState(false);
+        props.closeModal();
       }
     },
-  })
+  });
 
   const modalAnimation = useSpring({
     config: { mass: 1, tension: 210, friction: 21 },
@@ -50,20 +52,32 @@ function Modal(props) {
     },
     reverse: modalHiddenState,
     // immediate: isUsingMobile,
-  })
+  });
 
-  const clickToClose = () => setModalHiddenState(true)
+  const clickToClose = () => setModalHiddenState(true);
 
   return !props.modalIsHidden ? (
-    <div id="modal" className={"modal-container"}>
-      <a.div className="modal" style={modalAnimation}>
+    <div className={"modal-container"}>
+      <a.div
+        id="modal"
+        className="modal"
+        style={modalAnimation}
+        role="dialog"
+        aria-modal="true"
+      >
         <div className="modal-header">
           <div className="modal-title-container">
             <h2 className="modal-title">{props.title}</h2>
             {props.url && <VisitProject url={props.url} />}
           </div>
           <div className="modal-x-container">
-            <div className="modal-x" onClick={clickToClose} />
+            <button
+              className="modal-x"
+              onClick={clickToClose}
+              onKeyDown={clickToClose}
+              tabIndex="0"
+              name="close"
+            />
           </div>
         </div>
         <div className="modal-body">{props.children}</div>
@@ -76,7 +90,7 @@ function Modal(props) {
     </div>
   ) : (
     <div></div>
-  )
+  );
 }
 
-export default Modal
+export default Modal;

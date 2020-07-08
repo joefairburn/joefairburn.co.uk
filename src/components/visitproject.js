@@ -1,6 +1,4 @@
-import React from "react"
-import Button from "./button"
-
+import React from "react";
 const VisitProject = ({ onClick, url }) => {
   return (
     <a
@@ -12,7 +10,7 @@ const VisitProject = ({ onClick, url }) => {
     >
       Visit Project
     </a>
-  )
-}
+  );
+};
 
-export default VisitProject
+export default VisitProject;

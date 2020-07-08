@@ -1,11 +1,11 @@
-import React from "react"
-import Gallery from "../gallery"
+import React from "react";
+import Gallery from "../gallery";
 
-import quiz from "../../images/quiz-question.jpg"
-import quizIncorrect from "../../images/quiz-incorrect.jpg"
-import quizInstructions from "../../images/quiz-instructions.jpg"
-import quizFAQ from "../../images/quiz-FAQ.jpg"
-import quizEnding from "../../images/quiz-ending.jpg"
+import quiz from "../../images/quiz-question.jpg";
+import quizIncorrect from "../../images/quiz-incorrect.jpg";
+import quizInstructions from "../../images/quiz-instructions.jpg";
+import quizFAQ from "../../images/quiz-FAQ.jpg";
+import quizEnding from "../../images/quiz-ending.jpg";
 function BiologyQuizText(props) {
   const images = [
     {
@@ -28,7 +28,7 @@ function BiologyQuizText(props) {
       image: quizEnding,
       alt: "instruction for jungle games",
     },
-  ]
+  ];
   return (
     <>
       <Gallery images={images} />
@@ -70,7 +70,7 @@ function BiologyQuizText(props) {
         could be accessed by the client.
       </p>
     </>
-  )
+  );
 }
 
-export default BiologyQuizText
+export default BiologyQuizText;

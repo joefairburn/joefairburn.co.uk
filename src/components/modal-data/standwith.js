@@ -1,5 +1,4 @@
-import React from "react"
-import Gallery from "../gallery"
+import React from "react";
 function StandWith(props) {
   // const images = [
   //   {
@@ -40,7 +39,7 @@ function StandWith(props) {
         then used Tailwind to implement the design
       </p>
     </>
-  )
+  );
 }
 
-export default StandWith
+export default StandWith;

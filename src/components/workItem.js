@@ -1,29 +1,21 @@
-import React, { useCallback, useState } from "react"
-import { useSpring, animated as a, interpolate } from "react-spring"
-import TechUsed from "./techused"
+import React from "react";
+import TechUsed from "./techused";
 
 function WorkItem(props) {
-  const [isHover, setHover] = useState(false)
-  const toggleHover = () => {}
-
   const linkClicked = e => {
-    e.preventDefault()
-    props.itemClicked()
-  }
+    e.preventDefault();
+    props.itemClicked();
+  };
 
   return (
     <a
       href="#modal"
       className={"portfolio-item"}
-      onMouseLeave={() => setHover(false)}
       onClick={linkClicked}
       tabIndex="0"
     >
       <div className="image-container">
-        <TechUsed
-          className={`techstack-hidden-${!isHover}`}
-          isHidden={!isHover}
-        >
+        <TechUsed>
           {props.technologies &&
             props.technologies.map((tech, index) => (
               <div className="techstack-item" key={index}>
@@ -32,13 +24,13 @@ function WorkItem(props) {
               </div>
             ))}
         </TechUsed>
-        <img src={props.image} alt={props.itemName} />
+        <img src={props.background.image} alt={props.background.alt} />
       </div>
       <div className="portfolio-description">
         <p>{props.text}</p>
       </div>
     </a>
-  )
+  );
 }
 
-export default WorkItem
+export default WorkItem;

@@ -26,18 +26,20 @@ h2 {
   line-height: 1.1;
 }
 
-header {
+a:focus {
+  border: 1px solid black;
+}
+
+/* INTRO */
+
+.intro {
   position: relative;
   margin: 0;
   padding: 0;
   height: 100vh;
 }
 
-a:focus {
-  border: 1px solid black;
-}
-
-.header-background {
+.intro-background {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -51,38 +53,16 @@ a:focus {
 
 .background-image {
   position: absolute;
-  margin: 0;
-  padding: 0;
+  display: inline-block;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  -webkit-transform-origin: 0;
   transform-origin: 0;
-  overflow: hidden;
-  display: inline-block;
   background: linear-gradient(
     150deg,
     rgb(62, 46, 143) 15%,
     #4947ce 80%,
     #5957cc 90%
   );
-}
-
-span {
-  position: absolute;
-  height: 80px;
-  border-radius: 100px;
-  border-style: hidden;
-  display: inline-block;
-}
-
-main {
-  overflow: auto;
-}
-
-.index {
-  height: 100vh;
 }
 
 .hero-background {
@@ -94,66 +74,57 @@ main {
   overflow: hidden;
 }
 
-.hero-background > div > span {
-  width: 100vw;
-  position: relative;
-  margin-left: 0px;
-  border-radius: 0;
-}
-
 .hero-background > div {
   position: absolute;
   display: inline-block;
   white-space: nowrap;
 }
 
-.top-row {
-  bottom: 0;
+.background-block {
+  width: 100%;
+  position: relative;
+  margin-left: 0px;
+  border-radius: 0;
+  border-style: hidden;
+  display: inline-block;
+}
+
+.back-row {
   left: 0;
   padding: 0;
   margin: 0;
   width: auto;
-  height: 700px;
-}
-
-.top-row > span {
   height: 100%;
-  width: 200%;
+  bottom: 0;
+  top: auto;
 }
 
-.middle-row {
-  top: 100px;
+.back-row > span {
+  height: 100%;
+  width: 100%;
+}
+
+.front-row {
+  top: 10%;
   display: block;
-  height: 500px;
+  height: 80%;
 }
 
-.middle-row > span {
+.front-row > span {
   height: 100%;
-  width: 200%;
+  width: 110%;
   background: #27136e;
 }
 
-.bottom-row {
-  top: 50vh;
-  left: 70%;
-  display: block;
-  z-index: -1;
-}
-
-.bottom-row > span {
-  height: 69vh;
-  width: 200%;
-}
-
-.bottom-row > span,
-.top-row > span {
+.back-row > span {
   background: #3d2b7d56;
 }
 .centered-title {
   position: absolute;
-  height: 100%;
+  top: 0;
+  max-height: 500px;
   margin-left: 10%;
-  margin-top: -100px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -331,6 +302,7 @@ h2 {
   flex-direction: row;
   justify-content: center;
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .contact-list > li {
@@ -438,6 +410,7 @@ h2 {
   background-color: black;
   -webkit-mask: url(../images/icons8_delete.svg) no-repeat center;
   mask: url(../images/icons8_delete.svg) no-repeat center;
+  cursor: pointer;
 }
 
 .modal-body {
@@ -470,14 +443,6 @@ ul {
 
 .junglegames-image {
   width: 400px;
-}
-
-.link-icon {
-  height: 50px;
-  width: 50px;
-  background-color: black;
-  -webkit-mask: url(../images/icons8-external-link.svg) no-repeat center;
-  mask: url(../images/icons8-external-link.svg) no-repeat center;
 }
 
 .carousel {
@@ -649,7 +614,14 @@ ul {
   margin: 0;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (max-width: 900px) {
+  .contact-title {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .title-main {
+    font-size: 3rem;
+  }
 }
 
 @media (min-width: 500px) and (max-width: 600px) {
