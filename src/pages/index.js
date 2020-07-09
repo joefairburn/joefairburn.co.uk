@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
 import SEO from "../components/seo";
 import WorkItem from "../components/workItem";
@@ -43,19 +43,33 @@ import {
 import { useMediaPredicate } from "react-media-hook";
 
 function Index() {
-  const [{ st, sk }, set] = useSpring(() => ({ st: 0, sk: 0 }));
-  const interpBackRow = st.interpolate(o => `translateX(${o * -3}px)`);
-  const interpFrontRow = st.interpolate(o => `translateX(${o * 2}px)`);
-  const interpRotate = sk.interpolate(o => `skewY(${o}deg)`);
+  //if user is using a mobile/tablet
+  const isUsingMobile = useMediaPredicate("(orientation: portrait)");
 
-  const isUsingMobile = useMediaPredicate("(max-width: 450px)");
+  const [{ tiles, background }, set] = useSpring(() => ({
+    tiles: isUsingMobile ? -10 : 0,
+    background: isUsingMobile ? -10 : 0,
+  }));
+
+  //re-adjust the background if the screensize switches to a mobile one
+  useEffect(() => {
+    set({
+      tiles: isUsingMobile ? 0 : 0,
+      background: isUsingMobile ? -10 : 0,
+    });
+  }, [isUsingMobile]);
+
+  const interpBackRow = tiles.interpolate(o => `translateX(${o * -3}px)`);
+  const interpFrontRow = tiles.interpolate(o => `translateX(${o * 2}px)`);
+  const interpRotate = background.interpolate(o => `skewY(${o}deg)`);
 
   useScrollPosition(({ currPos }) => {
-    // if (!isUsingMobile)
-    set({
-      st: currPos.y,
-      sk: Math.min(Math.max(-10, currPos.y * 0.06), 0),
-    });
+    if (!isUsingMobile) {
+      set({
+        tiles: currPos.y,
+        background: Math.min(Math.max(-10, currPos.y * 0.06), 0),
+      });
+    }
   });
 
   const [modal, setModal] = useState({
@@ -92,7 +106,7 @@ function Index() {
       <section className="intro">
         <div className="intro-background-layer" aria-hidden="true">
           <a.div
-            className="background-image"
+            className="intro-background background-image"
             style={{ transform: interpRotate }}
           />
           <div
