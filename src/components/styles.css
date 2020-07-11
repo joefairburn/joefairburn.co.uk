@@ -534,7 +534,7 @@ a:focus {
   }
 }
 
-@media (min-width: 500px) and (max-width: 600px) {
+@media (min-width: 510px) and (max-width: 600px) {
   .modal-title {
     font-size: 1.8em;
   }
@@ -550,7 +550,7 @@ a:focus {
   }
 }
 
-@media (max-width: 430px) {
+@media (min-width: 370px) and (max-width: 430px) {
   .modal-container {
     margin: auto 0;
     width: 100%;
@@ -566,10 +566,16 @@ a:focus {
   }
 
   .intro-title-main {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
   .intro-title-desc {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .intro-title-main {
+    font-size: 1.7rem;
   }
 }
 
