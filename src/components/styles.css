@@ -1,3 +1,10 @@
+:root {
+  --bg-color: #4947ce;
+
+  --primary-color: #27136e;
+  --secondary-color: #3b2fa563;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap");
 body {
   font-family: "Poppins";
@@ -62,12 +69,7 @@ a:focus {
   width: 100%;
   height: 100%;
   transform-origin: 0;
-  background: linear-gradient(
-    150deg,
-    rgb(62, 46, 143) 15%,
-    #4947ce 80%,
-    #5957cc 90%
-  );
+  background: var(--bg-color);
 }
 
 .intro-background-tiles {
@@ -109,11 +111,11 @@ a:focus {
 }
 
 .front-row > .tile {
-  background: #27136e;
+  background: var(--primary-color);
 }
 
 .back-row > .tile {
-  background: #473ca8;
+  background: var(--secondary-color);
 }
 
 /* Intro text */
