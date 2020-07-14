@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #4947ce;
+  --bg-color: linear-gradient(150deg, #3e2e8f 15%, #4947ce 80%, #5957cc 90%);
 
   --primary-color: #27136e;
   --secondary-color: #3b2fa563;
@@ -333,7 +333,7 @@ a:focus {
 }
 
 .modal-header {
-  min-height: 10%;
+  min-height: 75px;
   display: flex;
   border-bottom: 2px solid rgb(235, 230, 230);
 }

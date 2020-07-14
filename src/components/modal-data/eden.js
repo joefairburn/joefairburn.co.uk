@@ -45,7 +45,7 @@ function EdenText(props) {
       <p>
         His{" "}
         <a
-          href="https://web.archive.org/web/20180220111109/http://www.iameden.eu/"
+          href="https://web.archive.org/web/20180208001013/http://www.iameden.eu/"
           rel="noopener noreferrer"
           target="_blank"
         >

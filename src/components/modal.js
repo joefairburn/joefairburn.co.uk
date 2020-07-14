@@ -33,7 +33,6 @@ function Modal(props) {
     from: { opacity: 0 },
     reverse: modalHiddenState,
     onRest: () => {
-      console.log("dsa");
       if (modalHiddenState === true) {
         setModalHiddenState(false);
         props.closeModal();
@@ -42,7 +41,7 @@ function Modal(props) {
   });
 
   const modalAnimation = useSpring({
-    config: { mass: 1, tension: 210, friction: 21 },
+    config: { mass: 1, tension: 210, friction: 23 },
     reset: true,
     from: { top: 2000, height: "0%", width: "0%" },
     to: !props.modalIsHidden && {

@@ -6,6 +6,8 @@ import junglegamesStart from "../../images/junglegames-start.jpg";
 import junglegamesInstructions from "../../images/junglegames-instructions.jpg";
 import junglegamesDemo from "../../images/junglegames-demo.jpg";
 import junglegamesPhone from "../../images/junglegames-phone.jpg";
+import junglegamesLiarLiarGameplay from "../../images/junglegames-liarliar.jpg";
+import junglegamesLiarLiarQuestion from "../../images/junglegames-liarliarQ.jpg";
 
 function JungleGames(props) {
   const images = [
@@ -24,6 +26,14 @@ function JungleGames(props) {
     {
       image: junglegamesPhone,
       alt: "instruction for jungle games",
+    },
+    {
+      image: junglegamesLiarLiarQuestion,
+      alt: "Question for the minigame liar liar",
+    },
+    {
+      image: junglegamesLiarLiarGameplay,
+      alt: "People playing the minigame liar liar",
     },
   ];
   return (

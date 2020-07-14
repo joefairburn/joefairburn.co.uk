@@ -24,6 +24,25 @@ function Gallery(props) {
     if (currentSlide !== index) setCurrentSlide(index);
   };
 
+  const shouldRenderGalleryItem = index => {
+    if (
+      (index === 0 && currentSlide === props.images.length - 1) ||
+      (currentSlide === 0 && index === props.images.length - 1)
+    ) {
+      console.log(index);
+
+      return true;
+    } else if (
+      index === currentSlide ||
+      index === currentSlide - 1 ||
+      index === currentSlide + 1
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className="carousel-container">
       <div className="carousel-buttons">
@@ -52,6 +71,7 @@ function Gallery(props) {
             image={e.image}
             alt={e.alt}
             key={index}
+            style={{ display: shouldRenderGalleryItem ? "block" : "none" }}
           />
         ))}
       </Carousel>
