@@ -1,7 +1,9 @@
-import React, { useState, useLayoutEffect, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
 import SEO from "../components/seo";
 import WorkItem from "../components/workItem";
+
+import { isMobile } from "react-device-detect";
 
 import Modal from "../components/modal";
 
@@ -9,7 +11,7 @@ import "sanitize.css";
 import "sanitize.css/forms.css";
 import "sanitize.css/typography.css";
 
-import "../components/styles.css";
+import "../css/styles.css";
 
 import EdenText from "../components/modal-data/eden";
 import BiologyQuizText from "../components/modal-data/biologyquiz";
@@ -81,7 +83,9 @@ function Index() {
 
   const handleModalClose = () => {
     document.body.style.overflowY = "unset";
-    document.body.style.paddingRight = "0px";
+    if (!isMobile) {
+      document.body.style.paddingRight = "0px";
+    }
     setModal({
       title: "",
       content: <div></div>,
@@ -92,7 +96,9 @@ function Index() {
 
   const handleModalShow = (title, newText, url) => {
     document.body.style.overflowY = "hidden";
-    document.body.style.paddingRight = "15px";
+    if (!isMobile) {
+      document.body.style.paddingRight = "15px";
+    }
     setModal({
       title: title,
       content: newText,
@@ -141,7 +147,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="portfolio" className="portfolio-section">
+      <section id="portfolio" className="section portfolio-section">
         <div className="portfolio-title">
           <h2>My Work</h2>
         </div>
@@ -262,7 +268,7 @@ function Index() {
           </Modal>
         )}
       </section>
-      <section className="contact-me">
+      <section className="section contact-me">
         <div className="contact-content">
           <div className="contact-title">
             <h2>Contact Me</h2>

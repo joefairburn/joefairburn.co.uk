@@ -148,7 +148,6 @@ a:focus {
 }
 
 /* PORTFOLIO */
-
 .portfolio-section {
   margin: 5%;
 }
@@ -234,6 +233,7 @@ a:focus {
 
 .contact-content {
   position: absolute;
+  padding: 0 5%;
   z-index: 1;
   width: 100%;
   margin-top: 125px;
@@ -241,7 +241,6 @@ a:focus {
 
 .contact-title {
   position: relative;
-  margin-left: 50px;
 }
 
 .contact-title h2 {
@@ -306,6 +305,7 @@ a:focus {
   top: 0;
   bottom: 0;
   margin: auto;
+  overflow: hidden;
 }
 
 .modal-header,
@@ -314,7 +314,7 @@ a:focus {
 }
 
 .modal-body {
-  max-height: 80%;
+  height: calc(100% - 110px);
   margin: 0px 25px;
   overflow: auto;
   padding: 5px 0;
@@ -349,6 +349,7 @@ a:focus {
   flex-wrap: wrap;
   width: 100%;
   margin: auto 0;
+  padding: 5px 0;
 }
 
 .modal-x-container {
@@ -385,7 +386,7 @@ a:focus {
 }
 
 .gallery-image-container {
-  height: 50vh;
+  height: auto;
   overflow: hidden;
 }
 .slide,
@@ -394,6 +395,7 @@ a:focus {
 }
 
 .gallery-image {
+  max-height: 50vh;
   height: 100%;
   object-fit: scale-down;
   background-color: white;
@@ -542,7 +544,7 @@ a:focus {
   }
 }
 
-@media (min-width: 430px) and (max-width: 510px) {
+@media (max-width: 510px) {
   .intro-title-main {
     font-size: 2.3rem;
   }
