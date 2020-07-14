@@ -21,6 +21,7 @@ import junglegamesimage from "../images/junglegames-sm.jpg";
 import biologyquizimage from "../images/quiz-sm.jpg";
 import typetestimage from "../images/typetest-sm.jpg";
 import edenimage from "../images/eden-sm.jpg";
+import standwithimage from "../images/standwith/standwith-sm.jpg";
 import Contact from "../components/contact";
 
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
@@ -146,6 +147,49 @@ function Index() {
         </div>
         <div className="portfolio-items">
           <WorkItem
+            background={{ image: standwithimage, alt: "" }}
+            text={"StandWith"}
+            itemClicked={() =>
+              handleModalShow(
+                "StandWith",
+                <StandWith />,
+                "https://standwith.org"
+              )
+            }
+            technologies={[
+              {
+                icon: <ReactLogo />,
+                name: "React",
+              },
+              { icon: <Redux />, name: "Redux" },
+              { icon: <NextDotJs />, name: "Next.js" },
+              { icon: <Firebase />, name: "Firebase" },
+              { icon: <NodeDotJs />, name: "Node.js" },
+              { icon: <Tailwindcss />, name: "Tailwind" },
+            ]}
+          />
+          <WorkItem
+            background={{
+              image: typetestimage,
+              alt:
+                "Gameplay of 'typtest', where user is entering a quote into a input box.",
+            }}
+            text={"TypeTest"}
+            itemClicked={() =>
+              handleModalShow(
+                "TypeTest",
+                <TypeTestText />,
+                "https://www.joefairburn.co.uk/typetest"
+              )
+            }
+            technologies={[
+              {
+                icon: <ReactLogo />,
+                name: "React",
+              },
+            ]}
+          />
+          <WorkItem
             background={{
               image: junglegamesimage,
               alt:
@@ -184,49 +228,6 @@ function Index() {
               { icon: <Gatsby />, name: "Gatsby" },
             ]}
           />
-          <WorkItem
-            background={{
-              image: typetestimage,
-              alt:
-                "Gameplay of 'typtest', where user is entering a quote into a input box.",
-            }}
-            text={"TypeTest"}
-            itemClicked={() =>
-              handleModalShow(
-                "TypeTest",
-                <TypeTestText />,
-                "https://www.joefairburn.co.uk/typetest"
-              )
-            }
-            technologies={[
-              {
-                icon: <ReactLogo />,
-                name: "React",
-              },
-            ]}
-          />
-          {/* <WorkItem
-            background={{ image: typetestimage, alt: "" }}
-            text={"StandWith"}
-            itemClicked={() =>
-              handleModalShow(
-                "StandWith",
-                <StandWith />,
-                "https://standwith.org"
-              )
-            }
-            technologies={[
-              {
-                icon: <ReactLogo />,
-                name: "React",
-              },
-              { icon: <Redux />, name: "Redux" },
-              { icon: <NextDotJs />, name: "Next.js" },
-              { icon: <Firebase />, name: "Firebase" },
-              { icon: <NodeDotJs />, name: "Node.js" },
-              { icon: <Tailwindcss />, name: "Tailwind" },
-            ]}
-          /> */}
           <WorkItem
             background={{
               image: edenimage,

@@ -1,27 +1,42 @@
 import React from "react";
+import Gallery from "../../components/gallery";
+import standwithSearch from "../../images/standwith/standwith-search.jpg";
+import standwithCreate from "../../images/standwith/standwith-create.jpg";
+import standwithLogin from "../../images/standwith/standwith-login.jpg";
+import standwithMain from "../../images/standwith/standwith-main.jpg";
+import standwithEvent from "../../images/standwith/standwith-event.jpg";
 function StandWith(props) {
-  // const images = [
-  //   {
-  //     image: typetest,
-  //     alt: "gameplay of jungle games",
-  //   },
-  //   {
-  //     image: typetestWPM,
-  //     alt: "instruction for jungle games",
-  //   },
-  //   {
-  //     image: typetestProfile,
-  //     alt: "instruction for jungle games",
-  //   },
-  // ]
+  const images = [
+    {
+      image: standwithEvent,
+      alt: "Event page for StandWith",
+    },
+    {
+      image: standwithSearch,
+      alt: "Search functionality of StandWith",
+    },
+    {
+      image: standwithCreate,
+      alt: "Event creation page for StandWith",
+    },
+    {
+      image: standwithLogin,
+      alt: "Login page for StandWith",
+    },
+    {
+      image: standwithMain,
+      alt: "Homepage for StandWith",
+    },
+  ];
   return (
     <>
-      {/* <Gallery images={images} /> */}
+      <Gallery images={images} />
       <h3>What was it?</h3>
       <p>
-        This project was developed as an investigation into how technology could
-        be used to aid political movements such as Black Lives Matter, with
-        user’s privacy and anonymity placed at the forefront of the design.
+        This fully-functioning prototype was developed as part of my final year
+        project, where I explored how web technologies could be used to aid
+        political movements. It differed from similiar solutions by prioritising
+        privacy, and trying to minimize bias.
       </p>
       <h3>How did it work?</h3>
       <p>

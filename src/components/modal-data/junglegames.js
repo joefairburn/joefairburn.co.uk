@@ -12,15 +12,15 @@ import junglegamesLiarLiarQuestion from "../../images/junglegames-liarliarQ.jpg"
 function JungleGames(props) {
   const images = [
     {
+      image: junglegamesDemo,
+      alt: "instruction for jungle games",
+    },
+    {
       image: junglegamesStart,
       alt: "gameplay of jungle games",
     },
     {
       image: junglegamesInstructions,
-      alt: "instruction for jungle games",
-    },
-    {
-      image: junglegamesDemo,
       alt: "instruction for jungle games",
     },
     {
