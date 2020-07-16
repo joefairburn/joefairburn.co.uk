@@ -50,15 +50,15 @@ function Index() {
   const isUsingMobile = useMediaPredicate("(orientation: portrait)");
 
   const [{ tiles, background }, set] = useSpring(() => ({
-    tiles: isUsingMobile ? -10 : 0,
-    background: isUsingMobile ? -10 : 0,
+    tiles: 0,
+    background: 0,
   }));
 
   //re-adjust the background if the screensize switches to a mobile one
   useEffect(() => {
     set({
-      tiles: isUsingMobile ? 0 : 0,
-      background: isUsingMobile ? -10 : 0,
+      tiles: 0,
+      background: 0,
     });
   }, [isUsingMobile]);
 

@@ -524,7 +524,13 @@ a:focus {
   flex-wrap: wrap;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 1439px) {
+  .portfolio-item {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
   .contact-title {
     margin-left: 0px;
     text-align: center;
@@ -538,13 +544,13 @@ a:focus {
   }
 }
 
-@media (min-width: 510px) and (max-width: 600px) {
+@media screen and (min-width: 510px) and (max-width: 600px) {
   .modal-title {
     font-size: 1.8em;
   }
 }
 
-@media (max-width: 510px) {
+@media screen and (max-width: 510px) {
   .intro-title-main {
     font-size: 2.3rem;
   }
@@ -554,7 +560,7 @@ a:focus {
   }
 }
 
-@media (min-width: 370px) and (max-width: 430px) {
+@media screen and (min-width: 370px) and (max-width: 430px) {
   .modal-container {
     margin: auto 0;
     width: 100%;
@@ -577,19 +583,19 @@ a:focus {
   }
 }
 
-@media (max-width: 370px) {
+@media screen and (max-width: 370px) {
   .intro-title-main {
     font-size: 1.7rem;
   }
 }
 
-@media (orientation: portrait) {
+@media screen and (orientation: portrait) {
   .intro {
-    height: 75vh;
+    height: 100vh;
   }
-  .intro-background {
-    transform: skewY(-10deg);
-  }
+  /* .intro-background {
+    transform: skewY(0deg);
+  } */
 }
 
 .portfolio-item:focus > .image-container > .techstack-container,

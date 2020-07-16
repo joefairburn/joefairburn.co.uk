@@ -43,6 +43,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-minify`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
