@@ -95,6 +95,7 @@ function Index() {
   };
 
   const handleModalShow = (title, newText, url) => {
+    console.log(isMobile);
     document.body.style.overflowY = "hidden";
     if (!isMobile) {
       document.body.style.paddingRight = "15px";

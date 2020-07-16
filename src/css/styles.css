@@ -150,6 +150,7 @@ a:focus {
 /* PORTFOLIO */
 .portfolio-section {
   margin: 5%;
+  margin-top: 0;
 }
 
 .portfolio-items {
@@ -219,7 +220,7 @@ a:focus {
   overflow-y: hidden;
   top: -300px;
   width: 100vw;
-  height: 700px;
+  height: 625px;
   z-index: 0;
   overflow-x: visible;
 }
@@ -557,6 +558,10 @@ a:focus {
 
   .modal-title {
     font-size: 1.7em;
+  }
+  .contact-list > li {
+    width: 60px;
+    height: 60px;
   }
 }
 
