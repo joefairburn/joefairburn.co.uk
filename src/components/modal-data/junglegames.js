@@ -44,13 +44,13 @@ function JungleGames(props) {
         The Jungle Games is an online multiplayer game consisting of three
         minigames. I created it alongside three of my peers during my second
         year at university, my role was to implement the games and designs that
-        my team came up with.
+        my team produced.
       </p>
       <h3>How did it work?</h3>
       <p>
         The game was hosted on a PC using a client developed in Unity. The
         players then interacted with the game using their phones to input
-        answers to the prompts which they recieved. They could then vote on
+        answers to the prompts which they received. They could then vote on
         whose answers were the best or the wittiest, and the results would then
         be showed on the PC client.
       </p>

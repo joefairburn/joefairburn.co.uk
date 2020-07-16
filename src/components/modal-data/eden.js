@@ -35,11 +35,11 @@ function EdenText(props) {
       <Gallery images={images} />
       <h3>What was it?</h3>
       <p>
-        This is a promtional site created in 2018 as part of a web design module
-        I was taking. The brief was to create a static brochure style site,
-        which functioned on both a 1920 x 1080, and 800 x 1280 display, using
-        only HTML and CSS. I decided to create a new website for a musician
-        known as Eden.
+        This is a promotional site created in 2018 as part of a web design
+        module I was taking. The brief was to create a static brochure style
+        site, which functioned on both a 1920 x 1080, and 800 x 1280 display,
+        using only HTML and CSS. I decided to create a new website for a
+        musician known as Eden.
       </p>
       <h3>How did it work?</h3>
       <p>

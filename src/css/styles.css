@@ -123,8 +123,7 @@ a:focus {
 .intro-centered-title {
   position: absolute;
   top: 20%;
-  margin-left: 10%;
-  margin-right: 7%;
+  margin: 0 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,14 +132,14 @@ a:focus {
 
 .intro-title-main {
   font-size: 4rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   color: white;
   font-weight: 600;
   line-height: 1;
 }
 
 .intro-title-desc {
-  margin-top: 0.5rem;
+  margin-top: 0;
   font-size: 1.8rem;
   font-weight: 400;
   color: #fec21e;
@@ -244,8 +243,13 @@ a:focus {
   position: relative;
 }
 
-.contact-title h2 {
+.contact-title > h2 {
   color: rgb(235, 230, 230);
+  font-size: 1.59rem;
+  margin-left: 0px;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .contact-list {
@@ -539,10 +543,6 @@ a:focus {
   .intro-title-main {
     font-size: 2.8rem;
   }
-
-  .intro-title-desc {
-    font-size: 1.5rem;
-  }
 }
 
 @media screen and (min-width: 510px) and (max-width: 600px) {
@@ -552,10 +552,6 @@ a:focus {
 }
 
 @media screen and (max-width: 510px) {
-  .intro-title-main {
-    font-size: 2.3rem;
-  }
-
   .modal-title {
     font-size: 1.7em;
   }
@@ -579,19 +575,9 @@ a:focus {
   .centered-title {
     margin-top: -50px;
   }
-
-  .intro-title-main {
-    font-size: 2rem;
-  }
-  .intro-title-desc {
-    font-size: 1.2rem;
-  }
 }
 
 @media screen and (max-width: 370px) {
-  .intro-title-main {
-    font-size: 1.7rem;
-  }
 }
 
 @media screen and (orientation: portrait) {
@@ -601,6 +587,12 @@ a:focus {
   /* .intro-background {
     transform: skewY(0deg);
   } */
+}
+
+@media screen and (min-height: 800px) and (orientation: portrait) {
+  .intro {
+    height: 80vh;
+  }
 }
 
 .portfolio-item:focus > .image-container > .techstack-container,

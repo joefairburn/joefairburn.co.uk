@@ -39,15 +39,15 @@ function BiologyQuizText(props) {
         worked closely with the client to achieve the specific requirements they
         requested.
       </p>
-      <h3 className="description-title">How did it worked?</h3>
+      <h3 className="description-title">How did it work?</h3>
       <ul>
         <li>There were 5 rounds</li>
         <li>
           At the beginning of each round, the player starts off with 5 points
         </li>
         <li>
-          They then watch a video, and then answer several questions to test
-          their knowledge on the subject
+          They then watch a video, and then answer several questions on the
+          video's subject
         </li>
         <li>
           If they answer all questions correctly, they proceed to the next
@@ -59,15 +59,15 @@ function BiologyQuizText(props) {
         </li>
         <li>
           Statistics about a player’s performance, and behaviour were
-          automatically saved to a Google Drive spreadsheet which colid be
+          automatically saved to a Google Drive spreadsheet which could be
           accessed by the client.
         </li>
       </ul>
       <h3>How was it made?</h3>
       <p>
         The front-end was created using React and Gatsby. It then used the
-        Google Sheets API to save each individual result to a spreadsheet which
-        could be accessed by the client.
+        Google Sheets API to save each individual result to a spreadsheet,
+        accessible only to the client.
       </p>
     </>
   );

@@ -27,7 +27,7 @@ function TypeTestText(props) {
       <p>
         Typetest was created as part of a research project, looking at how to
         improve users typing ability in typing tests while using a computer
-        keyboard.
+        keyboard. As such the website is not optimized for mobile devices.
       </p>
       <h3>How did it work?</h3>
       <p>
