@@ -1,11 +1,11 @@
 import React from "react";
 import Gallery from "../gallery";
 
-import edenHomepage from "../../images/eden-homepage.jpg";
-import edenContact from "../../images/eden-contact.jpg";
-import edenMusic from "../../images/eden-music.jpg";
-import edenStore from "../../images/eden-store.jpg";
-import edenTour from "../../images/eden-tour.jpg";
+import edenHomepage from "../../images/eden/eden-homepage.jpg";
+import edenContact from "../../images/eden/eden-contact.jpg";
+import edenMusic from "../../images/eden/eden-music.jpg";
+import edenStore from "../../images/eden/eden-store.jpg";
+import edenTour from "../../images/eden/eden-tour.jpg";
 
 function EdenText(props) {
   const images = [

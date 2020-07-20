@@ -5,10 +5,10 @@ import StandWith from "../components/modal-data/standwith";
 import JungleGamesText from "../components/modal-data/junglegames";
 import TypeTestText from "../components/modal-data/typetest";
 
-import junglegamesimage from "../images/junglegames-sm.jpg";
-import biologyquizimage from "../images/quiz-sm.jpg";
-import typetestimage from "../images/typetest-sm.jpg";
-import edenimage from "../images/eden-sm.jpg";
+import junglegamesimage from "../images/junglegames/junglegames-sm.jpg";
+import biologyquizimage from "../images/quiz/quiz-sm.jpg";
+import typetestimage from "../images/typetest/typetest-sm.jpg";
+import edenimage from "../images/eden/eden-sm.jpg";
 import standwithimage from "../images/standwith/standwith-sm.jpg";
 import {
   ReactLogo,

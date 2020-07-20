@@ -6,8 +6,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import Button from "./button";
 
-import PreviousIcon from "../images/icons8_previous.inline.svg";
-import NextIcon from "../images/icons8_next.inline.svg";
+import PreviousIcon from "../images/icons/icons8_previous.inline.svg";
+import NextIcon from "../images/icons/icons8_next.inline.svg";
 
 function Gallery(props) {
   const [currentSlide, setCurrentSlide] = useState(0);

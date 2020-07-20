@@ -2,12 +2,12 @@ import React from "react";
 
 import Gallery from "../gallery";
 
-import junglegamesStart from "../../images/junglegames-start.jpg";
-import junglegamesInstructions from "../../images/junglegames-instructions.jpg";
-import junglegamesDemo from "../../images/junglegames-demo.jpg";
-import junglegamesPhone from "../../images/junglegames-phone.jpg";
-import junglegamesLiarLiarGameplay from "../../images/junglegames-liarliar.jpg";
-import junglegamesLiarLiarQuestion from "../../images/junglegames-liarliarQ.jpg";
+import junglegamesStart from "../../images/junglegames/junglegames-start.jpg";
+import junglegamesInstructions from "../../images/junglegames/junglegames-instructions.jpg";
+import junglegamesDemo from "../../images/junglegames/junglegames-demo.jpg";
+import junglegamesPhone from "../../images/junglegames/junglegames-phone.jpg";
+import junglegamesLiarLiarGameplay from "../../images/junglegames/junglegames-liarliar.jpg";
+import junglegamesLiarLiarQuestion from "../../images/junglegames/junglegames-liarliarQ.jpg";
 
 function JungleGames(props) {
   const images = [

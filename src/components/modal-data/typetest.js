@@ -1,9 +1,9 @@
 import React from "react";
 import Gallery from "../gallery";
 
-import typetest from "../../images/typetest.jpg";
-import typetestProfile from "../../images/typetest-profile.jpg";
-import typetestWPM from "../../images/typetest-WPM.jpg";
+import typetest from "../../images/typetest/typetest.jpg";
+import typetestProfile from "../../images/typetest/typetest-profile.jpg";
+import typetestWPM from "../../images/typetest/typetest-WPM.jpg";
 
 function TypeTestText(props) {
   const images = [

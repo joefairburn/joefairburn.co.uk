@@ -1,11 +1,11 @@
 import React from "react";
 import Gallery from "../gallery";
 
-import quiz from "../../images/quiz-question.jpg";
-import quizIncorrect from "../../images/quiz-incorrect.jpg";
-import quizInstructions from "../../images/quiz-instructions.jpg";
-import quizFAQ from "../../images/quiz-FAQ.jpg";
-import quizEnding from "../../images/quiz-ending.jpg";
+import quiz from "../../images/quiz/quiz-question.jpg";
+import quizIncorrect from "../../images/quiz/quiz-incorrect.jpg";
+import quizInstructions from "../../images/quiz/quiz-instructions.jpg";
+import quizFAQ from "../../images/quiz/quiz-FAQ.jpg";
+import quizEnding from "../../images/quiz/quiz-ending.jpg";
 function BiologyQuizText(props) {
   const images = [
     {
